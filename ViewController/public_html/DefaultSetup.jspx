@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout id="psl1">
+          <f:facet name="center">
+            <af:panelTabbed id="pt1">
+              <af:showDetailItem text="Buyer Wise Default TNA" id="sdi1">
+                <af:selectOneChoice value="#{bindings.BuyerVO1.inputValue}"
+                                    label="#{bindings.BuyerVO1.label}"
+                                    required="#{bindings.BuyerVO1.hints.mandatory}"
+                                    shortDesc="#{bindings.BuyerVO1.hints.tooltip}"
+                                    id="soc1">
+                  <f:selectItems value="#{bindings.BuyerVO1.items}" id="si1"/>
+                </af:selectOneChoice>
+                <af:panelCollection id="pc1" inlineStyle="width:100.0%;">
+                  <f:facet name="menus"/>
+                  <f:facet name="toolbar">
+                    <af:toolbar id="t3">
+                      <af:commandButton actionListener="#{bindings.CreateInsert1.execute}"
+                                        text="CreateInsert1"
+                                        disabled="#{!bindings.CreateInsert1.enabled}"
+                                        id="cb4"/>
+                      <af:commandButton actionListener="#{bindings.Delete1.execute}"
+                                        text="Delete1"
+                                        disabled="#{!bindings.Delete1.enabled}"
+                                        id="cb5"/>
+                      <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                        text="Commit"
+                                        disabled="#{!bindings.Commit.enabled}"
+                                        id="cb6"/>
+                    </af:toolbar>
+                  </f:facet>
+                  <f:facet name="statusbar"/>
+                  <af:table value="#{bindings.XxTnaDefaultBuyerWiseVO1.collectionModel}"
+                            var="row"
+                            rows="#{bindings.XxTnaDefaultBuyerWiseVO1.rangeSize}"
+                            emptyText="#{bindings.XxTnaDefaultBuyerWiseVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                            fetchSize="#{bindings.XxTnaDefaultBuyerWiseVO1.rangeSize}"
+                            rowBandingInterval="0"
+                            filterModel="#{bindings.XxTnaDefaultBuyerWiseVO1Query.queryDescriptor}"
+                            queryListener="#{bindings.XxTnaDefaultBuyerWiseVO1Query.processQuery}"
+                            filterVisible="true" varStatus="vs"
+                            selectedRowKeys="#{bindings.XxTnaDefaultBuyerWiseVO1.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.XxTnaDefaultBuyerWiseVO1.collectionModel.makeCurrent}"
+                            rowSelection="single" id="t2" width="100%"
+                            partialTriggers="::cb4 ::cb5">
+                    <af:column sortProperty="TbwId" filterable="true"
+                               sortable="true"
+                               headerText="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TbwId.label}"
+                               id="c5">
+                      <af:inputText value="#{row.bindings.TbwId.inputValue}"
+                                    label="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TbwId.label}"
+                                    required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TbwId.mandatory}"
+                                    columns="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TbwId.displayWidth}"
+                                    maximumLength="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TbwId.precision}"
+                                    shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TbwId.tooltip}"
+                                    id="it3">
+                        <f:validator binding="#{row.bindings.TbwId.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TbwId.format}"/>
+                      </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="BuyerId" filterable="true"
+                               sortable="true"
+                               headerText="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.BuyerId.label}"
+                               id="c4">
+                      <af:inputText value="#{row.bindings.BuyerId.inputValue}"
+                                    label="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.BuyerId.label}"
+                                    required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.BuyerId.mandatory}"
+                                    columns="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.BuyerId.displayWidth}"
+                                    maximumLength="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.BuyerId.precision}"
+                                    shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.BuyerId.tooltip}"
+                                    id="it8">
+                        <f:validator binding="#{row.bindings.BuyerId.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.BuyerId.format}"/>
+                      </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="TnaDateId" filterable="true"
+                               sortable="true"
+                               headerText="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateId.label}"
+                               id="c7" partialTriggers="soc2">
+                      <af:inputText value="#{row.bindings.TnaDateId.inputValue}"
+                                    label="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateId.label}"
+                                    required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateId.mandatory}"
+                                    columns="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateId.displayWidth}"
+                                    maximumLength="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateId.precision}"
+                                    shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateId.tooltip}"
+                                    id="it4">
+                        <f:validator binding="#{row.bindings.TnaDateId.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateId.format}"/>
+                      </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateName.label}"
+                               id="c9" width="250" align="center">
+                      <af:selectOneChoice value="#{row.bindings.TnaDateName.inputValue}"
+                                          label="#{row.bindings.TnaDateName.label}"
+                                          required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateName.mandatory}"
+                                          shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateName.tooltip}"
+                                          id="soc2" autoSubmit="true">
+                        <f:selectItems value="#{row.bindings.TnaDateName.items}"
+                                       id="si2"/>
+                      </af:selectOneChoice>
+                    </af:column>
+                    <af:column sortProperty="DTnaDateId" filterable="true"
+                               sortable="true"
+                               headerText="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DTnaDateId.label}"
+                               id="c8">
+                      <af:inputText value="#{row.bindings.DTnaDateId.inputValue}"
+                                    label="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DTnaDateId.label}"
+                                    required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DTnaDateId.mandatory}"
+                                    columns="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DTnaDateId.displayWidth}"
+                                    maximumLength="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DTnaDateId.precision}"
+                                    shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DTnaDateId.tooltip}"
+                                    id="it7" partialTriggers="soc3">
+                        <f:validator binding="#{row.bindings.DTnaDateId.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DTnaDateId.format}"/>
+                      </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DepandantTnaDateName.label}"
+                               id="c10" width="250" align="center">
+                      <af:selectOneChoice value="#{row.bindings.DepandantTnaDateName.inputValue}"
+                                          label="#{row.bindings.DepandantTnaDateName.label}"
+                                          required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DepandantTnaDateName.mandatory}"
+                                          shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DepandantTnaDateName.tooltip}"
+                                          id="soc3" autoSubmit="true">
+                        <f:selectItems value="#{row.bindings.DepandantTnaDateName.items}"
+                                       id="si3"/>
+                      </af:selectOneChoice>
+                    </af:column>
+                    <af:column sortProperty="PositiveNegative"
+                               sortable="true"
+                               headerText="+/-"
+                               id="c6" width="60" align="center"
+                               inlineStyle="font-size:large;">
+                      <af:selectOneChoice value="#{row.bindings.PositiveNegative.inputValue}"
+                                          label="#{row.bindings.PositiveNegative.label}"
+                                          required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.PositiveNegative.mandatory}"
+                                          shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.PositiveNegative.tooltip}"
+                                          id="soc4" autoSubmit="true"
+                                          inlineStyle="font-size:large; font-weight:bold; text-align:center;">
+                        <f:selectItems value="#{row.bindings.PositiveNegative.items}"
+                                       id="si4"/>
+                      </af:selectOneChoice>
+                    </af:column>
+                    <af:column sortProperty="DayDifference" filterable="true"
+                               sortable="true"
+                               headerText="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.label}"
+                               id="c3" align="center">
+                      <af:inputText value="#{row.bindings.DayDifference.inputValue}"
+                                    label="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.label}"
+                                    required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.mandatory}"
+                                    columns="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.displayWidth}"
+                                    maximumLength="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.precision}"
+                                    shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.tooltip}"
+                                    id="it6">
+                        <f:validator binding="#{row.bindings.DayDifference.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.format}"/>
+                      </af:inputText>
+                    </af:column>
+                  </af:table>
+                </af:panelCollection>
+              </af:showDetailItem>
+              <af:showDetailItem text="Fabric Origin Wise TNA " id="sdi2"/>
+              <af:showDetailItem text="All TNA Dates " id="sdi3">
+                <af:panelGroupLayout id="pgl2"
+                                     inlineStyle="padding:50.0px;"
+                                     layout="vertical">
+                  <af:panelGroupLayout id="pgl1">
+                    <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
+                                      text="Add"
+                                      disabled="#{!bindings.CreateInsert.enabled}"
+                                      id="cb1"/>
+                    <af:spacer width="20" height="10" id="s1"/>
+                    <af:commandButton actionListener="#{bindings.Delete.execute}"
+                                      text="Delete"
+                                      disabled="#{!bindings.Delete.enabled}"
+                                      id="cb2"/>
+                    <af:spacer width="20" height="10" id="spacer1"/>
+                    <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                      text="Save"
+                                      disabled="#{!bindings.Commit.enabled}"
+                                      id="cb3"/>
+                  </af:panelGroupLayout>
+                  <af:spacer width="10" height="20" id="s2"/>
+                  <af:table value="#{bindings.XxTnaDatesVO1.collectionModel}"
+                            var="row" rows="#{bindings.XxTnaDatesVO1.rangeSize}"
+                            emptyText="#{bindings.XxTnaDatesVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                            fetchSize="#{bindings.XxTnaDatesVO1.rangeSize}"
+                            rowBandingInterval="0"
+                            filterModel="#{bindings.XxTnaDatesVO1Query.queryDescriptor}"
+                            queryListener="#{bindings.XxTnaDatesVO1Query.processQuery}"
+                            filterVisible="true" varStatus="vs"
+                            selectedRowKeys="#{bindings.XxTnaDatesVO1.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.XxTnaDatesVO1.collectionModel.makeCurrent}"
+                            rowSelection="single" id="t1"
+                            partialTriggers="::cb1 ::cb2">
+                    <af:column sortProperty="TnaDateId" filterable="true"
+                               sortable="true"
+                               headerText="TNA Date Id"
+                               id="c2" align="center" width="50">
+                      <af:inputText value="#{row.bindings.TnaDateId.inputValue}"
+                                    label="#{bindings.XxTnaDatesVO1.hints.TnaDateId.label}"
+                                    required="#{bindings.XxTnaDatesVO1.hints.TnaDateId.mandatory}"
+                                    columns="#{bindings.XxTnaDatesVO1.hints.TnaDateId.displayWidth}"
+                                    maximumLength="#{bindings.XxTnaDatesVO1.hints.TnaDateId.precision}"
+                                    shortDesc="#{bindings.XxTnaDatesVO1.hints.TnaDateId.tooltip}"
+                                    id="it1" readOnly="true">
+                        <f:validator binding="#{row.bindings.TnaDateId.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.XxTnaDatesVO1.hints.TnaDateId.format}"/>
+                      </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="TnaDateName" filterable="true"
+                               sortable="true"
+                               headerText="TNA Date Name"
+                               id="c1" align="center" width="200">
+                      <af:inputText value="#{row.bindings.TnaDateName.inputValue}"
+                                    label="#{bindings.XxTnaDatesVO1.hints.TnaDateName.label}"
+                                    required="#{bindings.XxTnaDatesVO1.hints.TnaDateName.mandatory}"
+                                    columns="#{bindings.XxTnaDatesVO1.hints.TnaDateName.displayWidth}"
+                                    maximumLength="#{bindings.XxTnaDatesVO1.hints.TnaDateName.precision}"
+                                    shortDesc="#{bindings.XxTnaDatesVO1.hints.TnaDateName.tooltip}"
+                                    id="it2">
+                        <f:validator binding="#{row.bindings.TnaDateName.validator}"/>
+                      </af:inputText>
+                    </af:column>
+                  </af:table>
+                </af:panelGroupLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+            <!-- id="af_one_column_stretched"   -->
+          </f:facet>
+          <f:facet name="top">
+            <af:panelHeader text="Default TNA Setup " id="ph1"
+                            styleClass="customLayoutStyle">
+              <f:facet name="context"/>
+              <f:facet name="menuBar"/>
+              <f:facet name="toolbar"/>
+            </af:panelHeader>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

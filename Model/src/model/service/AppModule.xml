@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  ClearCacheOnRollback="true">
+  <DesignTime>
+    <Attr Name="_deployType" Value="0"/>
+  </DesignTime>
+  <ViewUsage
+    Name="XxTnaDatesVO1"
+    ViewObjectName="model.view.XxTnaDatesVO"/>
+  <ViewUsage
+    Name="XxTnaFabricOriginVO1"
+    ViewObjectName="model.view.XxTnaFabricOriginVO"/>
+  <ViewUsage
+    Name="BuyerVO1"
+    ViewObjectName="model.view.BuyerVO"/>
+  <ViewUsage
+    Name="XxTnaDefaultBuyerWiseVO1"
+    ViewObjectName="model.view.XxTnaDefaultBuyerWiseVO"/>
+  <ViewLinkUsage
+    Name="BuyerVO_vs_XxTnaDefaultBuyerWiseVO_VL1"
+    ViewLinkObjectName="model.view.BuyerVO_vs_XxTnaDefaultBuyerWiseVO_VL"
+    SrcViewUsageName="model.service.AppModule.BuyerVO1"
+    DstViewUsageName="model.service.AppModule.XxTnaDefaultBuyerWiseVO1"
+    Reversed="false"/>
+</AppModule>

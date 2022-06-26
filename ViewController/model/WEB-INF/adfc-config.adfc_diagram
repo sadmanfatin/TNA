@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">Search</property>
+      <property
+         name="page">/Search.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Search&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">212.79297</property>
+      <property
+         name="x">389.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">DefaultSetup</property>
+      <property
+         name="page">/DefaultSetup.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>DefaultSetup&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">218.93652</property>
+      <property
+         name="x">732.0</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">Edit</property>
+      <property
+         name="page">/Edit.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Edit&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">425.29883</property>
+      <property
+         name="x">560.0</property>
+   </View>
+</SDM>

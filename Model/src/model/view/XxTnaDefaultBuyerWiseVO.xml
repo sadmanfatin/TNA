@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="XxTnaDefaultBuyerWiseVO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="XxTnaDatesVO1"
+    ViewObjectName="model.view.XxTnaDatesVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="PositiveNegativeLOV1"
+    ViewObjectName="model.lov.PositiveNegativeLOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_TnaDateName"
+    ListVOName="XxTnaDatesVO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TnaDateName"/>
+    </AttrArray>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="TnaDateId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TnaDateName"/>
+      <Item Value="TnaDateId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TnaDateName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DepandantTnaDateName"
+    ListVOName="XxTnaDatesVO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepandantTnaDateName"/>
+    </AttrArray>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="DTnaDateId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TnaDateName"/>
+      <Item Value="TnaDateId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TnaDateName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PositiveNegative"
+    ListVOName="PositiveNegativeLOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PositiveNegative"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="PositiveNegative"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="PositiveNegative"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery>
+    <![CDATA[SELECT XxTnaDefaultBuyerWiseEO.TBW_ID, 
+       XxTnaDefaultBuyerWiseEO.BUYER_ID, 
+       XxTnaDefaultBuyerWiseEO.TNA_DATE_ID,
+       (select td.TNA_DATE_NAME from XX_TNA_DATES td where td.tna_date_id = XxTnaDefaultBuyerWiseEO.tna_date_id ) tna_date_name ,       
+       XxTnaDefaultBuyerWiseEO.D_TNA_DATE_ID, 
+        (select td.TNA_DATE_NAME from XX_TNA_DATES td where td.tna_date_id = XxTnaDefaultBuyerWiseEO.d_tna_date_id ) depandant_tna_date_name ,
+       XxTnaDefaultBuyerWiseEO.POSITIVE_NEGATIVE, 
+       XxTnaDefaultBuyerWiseEO.DAY_DIFFERENCE
+FROM XX_TNA_DEFAULT_BUYER_WISE XxTnaDefaultBuyerWiseEO]]>
+  </SQLQuery>
+  <EntityUsage
+    Name="XxTnaDefaultBuyerWiseEO"
+    Entity="model.entity.XxTnaDefaultBuyerWiseEO"/>
+  <ViewAttribute
+    Name="TbwId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TbwId"
+    EntityUsage="XxTnaDefaultBuyerWiseEO"
+    AliasName="TBW_ID"/>
+  <ViewAttribute
+    Name="BuyerId"
+    PrecisionRule="true"
+    EntityAttrName="BuyerId"
+    EntityUsage="XxTnaDefaultBuyerWiseEO"
+    AliasName="BUYER_ID"/>
+  <ViewAttribute
+    Name="TnaDateId"
+    PrecisionRule="true"
+    EntityAttrName="TnaDateId"
+    EntityUsage="XxTnaDefaultBuyerWiseEO"
+    AliasName="TNA_DATE_ID"/>
+  <ViewAttribute
+    Name="TnaDateName"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="250"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TNA_DATE_NAME"
+    Expression="TNA_DATE_NAME"
+    SQLType="VARCHAR"
+    LOVName="LOV_TnaDateName">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DTnaDateId"
+    PrecisionRule="true"
+    EntityAttrName="DTnaDateId"
+    EntityUsage="XxTnaDefaultBuyerWiseEO"
+    AliasName="D_TNA_DATE_ID"/>
+  <ViewAttribute
+    Name="DepandantTnaDateName"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="250"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="DEPANDANT_TNA_DATE_NAME"
+    Expression="DEPANDANT_TNA_DATE_NAME"
+    SQLType="VARCHAR"
+    LOVName="LOV_DepandantTnaDateName">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PositiveNegative"
+    PrecisionRule="true"
+    EntityAttrName="PositiveNegative"
+    EntityUsage="XxTnaDefaultBuyerWiseEO"
+    AliasName="POSITIVE_NEGATIVE"
+    LOVName="LOV_PositiveNegative">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DayDifference"
+    PrecisionRule="true"
+    EntityAttrName="DayDifference"
+    EntityUsage="XxTnaDefaultBuyerWiseEO"
+    AliasName="DAY_DIFFERENCE"/>
+</ViewObject>

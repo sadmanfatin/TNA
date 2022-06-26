@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="DefaultSetupPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="XxTnaDatesVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="XxTnaDatesVO1Iterator"/>
+    <searchRegion Binds="XxTnaDatesVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="XxTnaDatesVO1Query"/>
+    <iterator Binds="BuyerVO1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="BuyerVO1Iterator"/>
+    <iterator Binds="XxTnaDefaultBuyerWiseVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="XxTnaDefaultBuyerWiseVO1Iterator"/>
+    <searchRegion Binds="XxTnaDefaultBuyerWiseVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="XxTnaDefaultBuyerWiseVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="XxTnaDatesVO1Iterator" id="XxTnaDatesVO1">
+      <nodeDefinition DefName="model.view.XxTnaDatesVO" Name="XxTnaDatesVO10">
+        <AttrNames>
+          <Item Value="TnaDateId"/>
+          <Item Value="TnaDateName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="XxTnaDatesVO1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="XxTnaDatesVO1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+    <list IterBinding="BuyerVO1Iterator" ListOperMode="navigation"
+          ListIter="BuyerVO1Iterator" id="BuyerVO1" DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="CustomerName"/>
+      </AttrNames>
+    </list>
+    <tree IterBinding="XxTnaDefaultBuyerWiseVO1Iterator"
+          id="XxTnaDefaultBuyerWiseVO1">
+      <nodeDefinition DefName="model.view.XxTnaDefaultBuyerWiseVO"
+                      Name="XxTnaDefaultBuyerWiseVO10">
+        <AttrNames>
+          <Item Value="TbwId"/>
+          <Item Value="BuyerId"/>
+          <Item Value="TnaDateId"/>
+          <Item Value="DTnaDateId"/>
+          <Item Value="PositiveNegative"/>
+          <Item Value="DayDifference"/>
+          <Item Value="TnaDateName"/>
+          <Item Value="DepandantTnaDateName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="XxTnaDefaultBuyerWiseVO1Iterator" id="CreateInsert1"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="XxTnaDefaultBuyerWiseVO1Iterator" id="Delete1"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

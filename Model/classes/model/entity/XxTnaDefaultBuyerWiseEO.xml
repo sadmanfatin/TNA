@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="XxTnaDefaultBuyerWiseEO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="XX_TNA_DEFAULT_BUYER_WISE"
+  AliasName="XxTnaDefaultBuyerWiseEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="model.entity.XxTnaDefaultBuyerWiseEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="TbwId"
+    IsNotNull="true"
+    ColumnName="TBW_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="XX_TNA_DEFAULT_BUYER_WISE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BuyerId"
+    ColumnName="BUYER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="XX_TNA_DEFAULT_BUYER_WISE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TnaDateId"
+    ColumnName="TNA_DATE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="XX_TNA_DEFAULT_BUYER_WISE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DTnaDateId"
+    ColumnName="D_TNA_DATE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="XX_TNA_DEFAULT_BUYER_WISE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PositiveNegative"
+    Precision="5"
+    ColumnName="POSITIVE_NEGATIVE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_TNA_DEFAULT_BUYER_WISE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DayDifference"
+    ColumnName="DAY_DIFFERENCE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="XX_TNA_DEFAULT_BUYER_WISE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="XxTnaDatesEO"
+    Association="model.entity.XxTnaDefaultBuyerWiseR01Assoc"
+    AssociationEnd="model.entity.XxTnaDefaultBuyerWiseR01Assoc.XxTnaDatesEO"
+    AssociationOtherEnd="model.entity.XxTnaDefaultBuyerWiseR01Assoc.XxTnaDefaultBuyerWiseEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="XxTnaDefaultBuyerWisePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="XX_TNA_DEFAULT_BUYER_WISE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entity.XxTnaDefaultBuyerWiseEO.TbwId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="XxTnaDefaultBuyerWiseR01">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="XX_TNA_DATES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="XX_TNA_DEFAULT_BUYER_WISE_R01"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entity.XxTnaDefaultBuyerWiseEO.TnaDateId"/>
+    </AttrArray>
+  </Key>
+</Entity>

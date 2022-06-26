@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="XxTnaDefaultBuyerWiseR01Assoc"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="XxTnaDatesEO"
+    Cardinality="1"
+    Source="true"
+    Owner="model.entity.XxTnaDatesEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="XxTnaDatesEO"/>
+      <Attr Name="_foreignKey" Value="model.entity.XxTnaDatesEO.XxTnaDatesPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entity.XxTnaDatesEO.TnaDateId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="XxTnaDefaultBuyerWiseEO"
+    Cardinality="-1"
+    Owner="model.entity.XxTnaDefaultBuyerWiseEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="XxTnaDefaultBuyerWiseEO"/>
+      <Attr Name="_foreignKey"
+        Value="model.entity.XxTnaDefaultBuyerWiseEO.XxTnaDefaultBuyerWiseR01"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entity.XxTnaDefaultBuyerWiseEO.TnaDateId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

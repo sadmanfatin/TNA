@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="XxTnaDatesVO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  SelectList="XxTnaDatesEO.TNA_DATE_ID, 
+       XxTnaDatesEO.TNA_DATE_NAME"
+  FromList="XX_TNA_DATES XxTnaDatesEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  RowClass="model.view.XxTnaDatesVORowImpl"
+  ComponentClass="model.view.XxTnaDatesVOImpl"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <EntityUsage
+    Name="XxTnaDatesEO"
+    Entity="model.entity.XxTnaDatesEO"/>
+  <ViewAttribute
+    Name="TnaDateId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TnaDateId"
+    EntityUsage="XxTnaDatesEO"
+    AliasName="TNA_DATE_ID"/>
+  <ViewAttribute
+    Name="TnaDateName"
+    PrecisionRule="true"
+    EntityAttrName="TnaDateName"
+    EntityUsage="XxTnaDatesEO"
+    AliasName="TNA_DATE_NAME"/>
+</ViewObject>
