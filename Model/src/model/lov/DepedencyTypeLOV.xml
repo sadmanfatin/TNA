@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="PositiveNegativeLOV"
+  Name="DepedencyTypeLOV"
   Version="11.1.1.62.29"
   InheritPersonalization="true"
   BindingStyle="OracleName"
@@ -16,27 +16,27 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.lov.PositiveNegativeLOV_LABEL"/>
+        ResId="model.lov.DepedencyTypeLOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <SQLQuery>
-    <![CDATA[select '+' positive_negative from dual
+    <![CDATA[select 'prior' dependency_type from dual
 union 
-select '--' positive_negative from dual]]>
+select 'from' dependency_type from dual]]>
   </SQLQuery>
   <ViewAttribute
-    Name="PositiveNegative"
+    Name="DependencyType"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Precision="1"
+    Precision="5"
     Type="java.lang.String"
-    ColumnType="CHAR"
-    AliasName="POSITIVE_NEGATIVE"
-    Expression="POSITIVE_NEGATIVE"
+    ColumnType="VARCHAR2"
+    AliasName="DEPENDENCY_TYPE"
+    Expression="DEPENDENCY_TYPE"
     SQLType="VARCHAR">
     <DesignTime>
-      <Attr Name="_DisplaySize" Value="1"/>
+      <Attr Name="_DisplaySize" Value="5"/>
     </DesignTime>
   </ViewAttribute>
   <ResourceBundle>

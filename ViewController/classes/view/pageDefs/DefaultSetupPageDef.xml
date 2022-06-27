@@ -49,10 +49,11 @@
           <Item Value="BuyerId"/>
           <Item Value="TnaDateId"/>
           <Item Value="DTnaDateId"/>
-          <Item Value="PositiveNegative"/>
           <Item Value="DayDifference"/>
           <Item Value="TnaDateName"/>
           <Item Value="DepandantTnaDateName"/>
+          <Item Value="DependencyValue"/>
+          <Item Value="DependencyType"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

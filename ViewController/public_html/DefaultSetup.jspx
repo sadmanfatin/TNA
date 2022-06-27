@@ -24,16 +24,15 @@
                   <f:facet name="toolbar">
                     <af:toolbar id="t3">
                       <af:commandButton actionListener="#{bindings.CreateInsert1.execute}"
-                                        text="CreateInsert1"
+                                        text="Add Row"
                                         disabled="#{!bindings.CreateInsert1.enabled}"
                                         id="cb4"/>
                       <af:commandButton actionListener="#{bindings.Delete1.execute}"
-                                        text="Delete1"
+                                        text="Delete Row"
                                         disabled="#{!bindings.Delete1.enabled}"
                                         id="cb5"/>
                       <af:commandButton actionListener="#{bindings.Commit.execute}"
-                                        text="Commit"
-                                        disabled="#{!bindings.Commit.enabled}"
+                                        text="Save"
                                         id="cb6"/>
                     </af:toolbar>
                   </f:facet>
@@ -54,14 +53,14 @@
                     <af:column sortProperty="TbwId" filterable="true"
                                sortable="true"
                                headerText="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TbwId.label}"
-                               id="c5">
+                               id="c5" width="60">
                       <af:inputText value="#{row.bindings.TbwId.inputValue}"
                                     label="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TbwId.label}"
                                     required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TbwId.mandatory}"
                                     columns="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TbwId.displayWidth}"
                                     maximumLength="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TbwId.precision}"
                                     shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TbwId.tooltip}"
-                                    id="it3">
+                                    id="it3" readOnly="true">
                         <f:validator binding="#{row.bindings.TbwId.validator}"/>
                         <af:convertNumber groupingUsed="false"
                                           pattern="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TbwId.format}"/>
@@ -70,14 +69,14 @@
                     <af:column sortProperty="BuyerId" filterable="true"
                                sortable="true"
                                headerText="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.BuyerId.label}"
-                               id="c4">
+                               id="c4" width="60">
                       <af:inputText value="#{row.bindings.BuyerId.inputValue}"
                                     label="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.BuyerId.label}"
                                     required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.BuyerId.mandatory}"
                                     columns="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.BuyerId.displayWidth}"
                                     maximumLength="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.BuyerId.precision}"
                                     shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.BuyerId.tooltip}"
-                                    id="it8">
+                                    id="it8" readOnly="true">
                         <f:validator binding="#{row.bindings.BuyerId.validator}"/>
                         <af:convertNumber groupingUsed="false"
                                           pattern="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.BuyerId.format}"/>
@@ -86,20 +85,20 @@
                     <af:column sortProperty="TnaDateId" filterable="true"
                                sortable="true"
                                headerText="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateId.label}"
-                               id="c7" partialTriggers="soc2">
+                               id="c7" partialTriggers="soc2" width="60">
                       <af:inputText value="#{row.bindings.TnaDateId.inputValue}"
                                     label="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateId.label}"
                                     required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateId.mandatory}"
                                     columns="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateId.displayWidth}"
                                     maximumLength="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateId.precision}"
                                     shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateId.tooltip}"
-                                    id="it4">
+                                    id="it4" readOnly="true">
                         <f:validator binding="#{row.bindings.TnaDateId.validator}"/>
                         <af:convertNumber groupingUsed="false"
                                           pattern="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateId.format}"/>
                       </af:inputText>
                     </af:column>
-                    <af:column headerText="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TnaDateName.label}"
+                    <af:column headerText="TNA Date "
                                id="c9" width="250" align="center">
                       <af:selectOneChoice value="#{row.bindings.TnaDateName.inputValue}"
                                           label="#{row.bindings.TnaDateName.label}"
@@ -110,23 +109,51 @@
                                        id="si2"/>
                       </af:selectOneChoice>
                     </af:column>
+                    <af:column sortProperty="DayDifference" filterable="true"
+                               sortable="true" headerText="Day Difference" id="c3"
+                               align="center" width="60">
+                      <af:inputText value="#{row.bindings.DayDifference.inputValue}"
+                                    label="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.label}"
+                                    required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.mandatory}"
+                                    columns="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.displayWidth}"
+                                    maximumLength="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.precision}"
+                                    shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.tooltip}"
+                                    id="it6" autoSubmit="true">
+                        <f:validator binding="#{row.bindings.DayDifference.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.format}"/>
+                      </af:inputText>
+                    </af:column>
+                    <af:column headerText="Dependency Type"
+                               id="c6" align="center" sortable="true"
+                               filterable="true">
+                      <af:selectOneChoice value="#{row.bindings.DependencyType.inputValue}"
+                                          label="#{row.bindings.DependencyType.label}"
+                                          required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DependencyType.mandatory}"
+                                          shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DependencyType.tooltip}"
+                                          id="soc4" autoSubmit="true">
+                        <f:selectItems value="#{row.bindings.DependencyType.items}"
+                                       id="si4"/>
+                      </af:selectOneChoice>
+                    </af:column>
                     <af:column sortProperty="DTnaDateId" filterable="true"
                                sortable="true"
                                headerText="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DTnaDateId.label}"
-                               id="c8">
+                               id="c8" width="60" visible="false">
                       <af:inputText value="#{row.bindings.DTnaDateId.inputValue}"
                                     label="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DTnaDateId.label}"
                                     required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DTnaDateId.mandatory}"
                                     columns="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DTnaDateId.displayWidth}"
                                     maximumLength="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DTnaDateId.precision}"
                                     shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DTnaDateId.tooltip}"
-                                    id="it7" partialTriggers="soc3">
+                                    id="it7" partialTriggers="soc3"
+                                    readOnly="true">
                         <f:validator binding="#{row.bindings.DTnaDateId.validator}"/>
                         <af:convertNumber groupingUsed="false"
                                           pattern="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DTnaDateId.format}"/>
                       </af:inputText>
                     </af:column>
-                    <af:column headerText="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DepandantTnaDateName.label}"
+                    <af:column headerText="Depending TNA Date"
                                id="c10" width="250" align="center">
                       <af:selectOneChoice value="#{row.bindings.DepandantTnaDateName.inputValue}"
                                           label="#{row.bindings.DepandantTnaDateName.label}"
@@ -137,35 +164,19 @@
                                        id="si3"/>
                       </af:selectOneChoice>
                     </af:column>
-                    <af:column sortProperty="PositiveNegative"
-                               sortable="true"
-                               headerText="+/-"
-                               id="c6" width="60" align="center"
-                               inlineStyle="font-size:large;">
-                      <af:selectOneChoice value="#{row.bindings.PositiveNegative.inputValue}"
-                                          label="#{row.bindings.PositiveNegative.label}"
-                                          required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.PositiveNegative.mandatory}"
-                                          shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.PositiveNegative.tooltip}"
-                                          id="soc4" autoSubmit="true"
-                                          inlineStyle="font-size:large; font-weight:bold; text-align:center;">
-                        <f:selectItems value="#{row.bindings.PositiveNegative.items}"
-                                       id="si4"/>
-                      </af:selectOneChoice>
-                    </af:column>
-                    <af:column sortProperty="DayDifference" filterable="true"
-                               sortable="true"
-                               headerText="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.label}"
-                               id="c3" align="center">
-                      <af:inputText value="#{row.bindings.DayDifference.inputValue}"
-                                    label="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.label}"
-                                    required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.mandatory}"
-                                    columns="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.displayWidth}"
-                                    maximumLength="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.precision}"
-                                    shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.tooltip}"
-                                    id="it6">
-                        <f:validator binding="#{row.bindings.DayDifference.validator}"/>
+                    <af:column headerText="Depedency Value"
+                               id="c11" align="center" width="60">
+                      <af:inputText value="#{row.bindings.DependencyValue.inputValue}"
+                                    label="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DependencyValue.label}"
+                                    required="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DependencyValue.mandatory}"
+                                    columns="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DependencyValue.displayWidth}"
+                                    maximumLength="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DependencyValue.precision}"
+                                    shortDesc="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DependencyValue.tooltip}"
+                                    id="it5" readOnly="true"
+                                    partialTriggers="it6 soc4">
+                        <f:validator binding="#{row.bindings.DependencyValue.validator}"/>
                         <af:convertNumber groupingUsed="false"
-                                          pattern="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DayDifference.format}"/>
+                                          pattern="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.DependencyValue.format}"/>
                       </af:inputText>
                     </af:column>
                   </af:table>

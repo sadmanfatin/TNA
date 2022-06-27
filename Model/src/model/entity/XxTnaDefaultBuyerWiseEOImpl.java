@@ -1,5 +1,7 @@
 package model.entity;
 
+import java.math.BigDecimal;
+
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
 import oracle.jbo.domain.Number;
@@ -60,16 +62,6 @@ public class XxTnaDefaultBuyerWiseEOImpl extends EntityImpl {
             }
         }
         ,
-        PositiveNegative {
-            public Object get(XxTnaDefaultBuyerWiseEOImpl obj) {
-                return obj.getPositiveNegative();
-            }
-
-            public void put(XxTnaDefaultBuyerWiseEOImpl obj, Object value) {
-                obj.setPositiveNegative((String)value);
-            }
-        }
-        ,
         DayDifference {
             public Object get(XxTnaDefaultBuyerWiseEOImpl obj) {
                 return obj.getDayDifference();
@@ -77,6 +69,26 @@ public class XxTnaDefaultBuyerWiseEOImpl extends EntityImpl {
 
             public void put(XxTnaDefaultBuyerWiseEOImpl obj, Object value) {
                 obj.setDayDifference((Number)value);
+            }
+        }
+        ,
+        DependencyType {
+            public Object get(XxTnaDefaultBuyerWiseEOImpl obj) {
+                return obj.getDependencyType();
+            }
+
+            public void put(XxTnaDefaultBuyerWiseEOImpl obj, Object value) {
+                obj.setDependencyType((String)value);
+            }
+        }
+        ,
+        DependencyValue {
+            public Object get(XxTnaDefaultBuyerWiseEOImpl obj) {
+                return obj.getDependencyValue();
+            }
+
+            public void put(XxTnaDefaultBuyerWiseEOImpl obj, Object value) {
+                obj.setDependencyValue((Integer)value);
             }
         }
         ,
@@ -117,18 +129,32 @@ public class XxTnaDefaultBuyerWiseEOImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int TBWID = AttributesEnum.TbwId.index();
     public static final int BUYERID = AttributesEnum.BuyerId.index();
     public static final int TNADATEID = AttributesEnum.TnaDateId.index();
     public static final int DTNADATEID = AttributesEnum.DTnaDateId.index();
-    public static final int POSITIVENEGATIVE = AttributesEnum.PositiveNegative.index();
     public static final int DAYDIFFERENCE = AttributesEnum.DayDifference.index();
+    public static final int DEPENDENCYTYPE = AttributesEnum.DependencyType.index();
+    public static final int DEPENDENCYVALUE = AttributesEnum.DependencyValue.index();
     public static final int XXTNADATESEO = AttributesEnum.XxTnaDatesEO.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public XxTnaDefaultBuyerWiseEOImpl() {
+    }
+
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        if (mDefinitionObject == null) {
+            mDefinitionObject = EntityDefImpl.findDefObject("model.entity.XxTnaDefaultBuyerWiseEO");
+        }
+        return mDefinitionObject;
     }
 
     /**
@@ -195,21 +221,6 @@ public class XxTnaDefaultBuyerWiseEOImpl extends EntityImpl {
         setAttributeInternal(DTNADATEID, value);
     }
 
-    /**
-     * Gets the attribute value for PositiveNegative, using the alias name PositiveNegative.
-     * @return the PositiveNegative
-     */
-    public String getPositiveNegative() {
-        return (String)getAttributeInternal(POSITIVENEGATIVE);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for PositiveNegative.
-     * @param value value to set the PositiveNegative
-     */
-    public void setPositiveNegative(String value) {
-        setAttributeInternal(POSITIVENEGATIVE, value);
-    }
 
     /**
      * Gets the attribute value for DayDifference, using the alias name DayDifference.
@@ -225,6 +236,41 @@ public class XxTnaDefaultBuyerWiseEOImpl extends EntityImpl {
      */
     public void setDayDifference(Number value) {
         setAttributeInternal(DAYDIFFERENCE, value);
+    }
+
+
+    /**
+     * Gets the attribute value for DependencyType, using the alias name DependencyType.
+     * @return the DependencyType
+     */
+    public String getDependencyType() {
+        return (String)getAttributeInternal(DEPENDENCYTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DependencyType.
+     * @param value value to set the DependencyType
+     */
+    public void setDependencyType(String value) {
+        setAttributeInternal(DEPENDENCYTYPE, value);
+        
+       
+    }
+
+    /**
+     * Gets the attribute value for DependencyValue, using the alias name DependencyValue.
+     * @return the DependencyValue
+     */
+    public Integer getDependencyValue() {
+        return (Integer)getAttributeInternal(DEPENDENCYVALUE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DependencyValue.
+     * @param value value to set the DependencyValue
+     */
+    public void setDependencyValue(Integer value) {
+        setAttributeInternal(DEPENDENCYVALUE, value);
     }
 
     /**
@@ -274,6 +320,7 @@ public class XxTnaDefaultBuyerWiseEOImpl extends EntityImpl {
         setAttributeInternal(XXTNADATESEO, value);
     }
 
+
     /**
      * @param tbwId key constituent
 
@@ -281,16 +328,6 @@ public class XxTnaDefaultBuyerWiseEOImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(Number tbwId) {
         return new Key(new Object[]{tbwId});
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        if (mDefinitionObject == null) {
-            mDefinitionObject = EntityDefImpl.findDefObject("model.entity.XxTnaDefaultBuyerWiseEO");
-        }
-        return mDefinitionObject;
     }
 
     /**

@@ -9,18 +9,21 @@
   BindingStyle="OracleName"
   CustomQuery="true"
   PageIterMode="Full"
-  UseGlueCode="false">
+  UseGlueCode="false"
+  RowClass="model.view.XxTnaDefaultBuyerWiseVORowImpl"
+  ComponentClass="model.view.XxTnaDefaultBuyerWiseVOImpl">
   <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
     <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <ViewAccessor
     Name="XxTnaDatesVO1"
     ViewObjectName="model.view.XxTnaDatesVO"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="PositiveNegativeLOV1"
-    ViewObjectName="model.lov.PositiveNegativeLOV"
+    Name="DepedencyTypeLOV1"
+    ViewObjectName="model.lov.DepedencyTypeLOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_TnaDateName"
@@ -67,20 +70,20 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_PositiveNegative"
-    ListVOName="PositiveNegativeLOV1"
+    Name="LOV_DependencyType"
+    ListVOName="DepedencyTypeLOV1"
     ListRangeSize="-1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueFlag="none"
+    NullValueId="LOV_DependencyType_LOVUIHints_NullValueId"
     MRUCount="0">
     <AttrArray Name="AttrNames">
-      <Item Value="PositiveNegative"/>
+      <Item Value="DependencyType"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
-      <Item Value="PositiveNegative"/>
+      <Item Value="DependencyType"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="PositiveNegative"/>
+      <Item Value="DependencyType"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -91,8 +94,9 @@
        (select td.TNA_DATE_NAME from XX_TNA_DATES td where td.tna_date_id = XxTnaDefaultBuyerWiseEO.tna_date_id ) tna_date_name ,       
        XxTnaDefaultBuyerWiseEO.D_TNA_DATE_ID, 
         (select td.TNA_DATE_NAME from XX_TNA_DATES td where td.tna_date_id = XxTnaDefaultBuyerWiseEO.d_tna_date_id ) depandant_tna_date_name ,
-       XxTnaDefaultBuyerWiseEO.POSITIVE_NEGATIVE, 
-       XxTnaDefaultBuyerWiseEO.DAY_DIFFERENCE
+       XxTnaDefaultBuyerWiseEO.DEPENDENCY_TYPE, 
+       XxTnaDefaultBuyerWiseEO.DAY_DIFFERENCE,
+        XxTnaDefaultBuyerWiseEO.DEPENDENCY_VALUE
 FROM XX_TNA_DEFAULT_BUYER_WISE XxTnaDefaultBuyerWiseEO]]>
   </SQLQuery>
   <EntityUsage
@@ -166,12 +170,13 @@ FROM XX_TNA_DEFAULT_BUYER_WISE XxTnaDefaultBuyerWiseEO]]>
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="PositiveNegative"
+    Name="DependencyType"
+    IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="PositiveNegative"
+    EntityAttrName="DependencyType"
     EntityUsage="XxTnaDefaultBuyerWiseEO"
-    AliasName="POSITIVE_NEGATIVE"
-    LOVName="LOV_PositiveNegative">
+    AliasName="DEPENDENCY_TYPE"
+    LOVName="LOV_DependencyType">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -185,4 +190,11 @@ FROM XX_TNA_DEFAULT_BUYER_WISE XxTnaDefaultBuyerWiseEO]]>
     EntityAttrName="DayDifference"
     EntityUsage="XxTnaDefaultBuyerWiseEO"
     AliasName="DAY_DIFFERENCE"/>
+  <ViewAttribute
+    Name="DependencyValue"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DependencyValue"
+    EntityUsage="XxTnaDefaultBuyerWiseEO"
+    AliasName="DEPENDENCY_VALUE"/>
 </ViewObject>
