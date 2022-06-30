@@ -196,5 +196,6 @@ FROM XX_TNA_DEFAULT_BUYER_WISE XxTnaDefaultBuyerWiseEO]]>
     PrecisionRule="true"
     EntityAttrName="DependencyValue"
     EntityUsage="XxTnaDefaultBuyerWiseEO"
-    AliasName="DEPENDENCY_VALUE"/>
+    AliasName="DEPENDENCY_VALUE"
+    DefaultValue="0"/>
 </ViewObject>

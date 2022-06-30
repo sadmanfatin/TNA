@@ -19,7 +19,7 @@
                                     id="soc1">
                   <f:selectItems value="#{bindings.BuyerVO1.items}" id="si1"/>
                 </af:selectOneChoice>
-                <af:panelCollection id="pc1" inlineStyle="width:100.0%;">
+                <af:panelCollection id="pc1" styleClass="AFStretchWidth">
                   <f:facet name="menus"/>
                   <f:facet name="toolbar">
                     <af:toolbar id="t3">

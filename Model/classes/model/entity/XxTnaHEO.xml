@@ -22,7 +22,7 @@
     IsNotNull="true"
     ColumnName="TNA_H_ID"
     SQLType="NUMERIC"
-    Type="Number"
+    Type="oracle.jbo.domain.Number"
     ColumnType="BIGINT"
     TableName="XX_TNA_H"
     PrimaryKey="true">
@@ -34,7 +34,7 @@
     Name="PocId"
     ColumnName="POC_ID"
     SQLType="NUMERIC"
-    Type="Number"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="XX_TNA_H">
     <DesignTime>
@@ -45,7 +45,7 @@
     Name="SystemId"
     ColumnName="SYSTEM_ID"
     SQLType="NUMERIC"
-    Type="Number"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="XX_TNA_H">
     <DesignTime>
@@ -56,7 +56,7 @@
     Name="BuyerId"
     ColumnName="BUYER_ID"
     SQLType="NUMERIC"
-    Type="Number"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="XX_TNA_H">
     <DesignTime>
@@ -67,7 +67,7 @@
     Name="TnaDateId"
     ColumnName="TNA_DATE_ID"
     SQLType="NUMERIC"
-    Type="Number"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="XX_TNA_H">
     <DesignTime>
@@ -78,7 +78,7 @@
     Name="DTnaDateId"
     ColumnName="D_TNA_DATE_ID"
     SQLType="NUMERIC"
-    Type="Number"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="XX_TNA_H">
     <DesignTime>
@@ -89,7 +89,7 @@
     Name="DepedencyValue"
     ColumnName="DEPEDENCY_VALUE"
     SQLType="NUMERIC"
-    Type="Number"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="XX_TNA_H">
     <DesignTime>
@@ -100,7 +100,7 @@
     Name="DayDifference"
     ColumnName="DAY_DIFFERENCE"
     SQLType="NUMERIC"
-    Type="Number"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="XX_TNA_H">
     <DesignTime>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="EditPageDef" Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="XxTnaHVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="XxTnaHVO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="XxTnaHVO1Iterator" id="XxTnaHVO1">
+      <nodeDefinition DefName="model.view.XxTnaHVO" Name="XxTnaHVO10">
+        <AttrNames>
+          <Item Value="TnaHId"/>
+          <Item Value="PocId"/>
+          <Item Value="SystemId"/>
+          <Item Value="BuyerId"/>
+          <Item Value="TnaDateId"/>
+          <Item Value="DTnaDateId"/>
+          <Item Value="DepedencyValue"/>
+          <Item Value="DayDifference"/>
+          <Item Value="DepedencyType"/>
+          <Item Value="FobId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

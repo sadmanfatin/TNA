@@ -22,6 +22,12 @@
   <ViewUsage
     Name="XxTnaDefaultBuyerWiseVO1"
     ViewObjectName="model.view.XxTnaDefaultBuyerWiseVO"/>
+  <ViewUsage
+    Name="XxTnaHVO1"
+    ViewObjectName="model.view.XxTnaHVO"/>
+  <ViewUsage
+    Name="PocStyleWashFabricVO1"
+    ViewObjectName="model.view.PocStyleWashFabricVO"/>
   <ViewLinkUsage
     Name="BuyerVO_vs_XxTnaDefaultBuyerWiseVO_VL1"
     ViewLinkObjectName="model.view.BuyerVO_vs_XxTnaDefaultBuyerWiseVO_VL"

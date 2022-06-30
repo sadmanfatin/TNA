@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PocStyleWashFabricVO_vs_XxTnaHVO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.view.PocStyleWashFabricVO_vs_XxTnaHVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="PocStyleWashFabricVO"
+    Cardinality="1"
+    Owner="model.view.PocStyleWashFabricVO"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="PocStyleWashFabricVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.view.PocStyleWashFabricVO.PocId"/>
+      <Item Value="model.view.PocStyleWashFabricVO.SystemId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="XxTnaHVO"
+    Cardinality="-1"
+    Owner="model.view.XxTnaHVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="XxTnaHVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.view.XxTnaHVO.PocId"/>
+      <Item Value="model.view.XxTnaHVO.SystemId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

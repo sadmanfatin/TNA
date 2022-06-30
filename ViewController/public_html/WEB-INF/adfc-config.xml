@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
-  <view id="Search">
-    <page>/Search.jspx</page>
-  </view>
   <view id="DefaultSetup">
     <page>/DefaultSetup.jspx</page>
   </view>
   <view id="Edit">
     <page>/Edit.jspx</page>
+  </view>
+  <view id="Search">
+    <page>/Search.jspx</page>
   </view>
 </adfc-config>

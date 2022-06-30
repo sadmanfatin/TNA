@@ -38,7 +38,7 @@ public class XxTnaHEOImpl extends EntityImpl {
             }
 
             public void put(XxTnaHEOImpl obj, Object value) {
-                obj.setPocId((BigDecimal)value);
+                obj.setPocId((Number)value);
             }
         }
         ,
@@ -48,7 +48,7 @@ public class XxTnaHEOImpl extends EntityImpl {
             }
 
             public void put(XxTnaHEOImpl obj, Object value) {
-                obj.setSystemId((BigDecimal)value);
+                obj.setSystemId((Number)value);
             }
         }
         ,
@@ -58,7 +58,7 @@ public class XxTnaHEOImpl extends EntityImpl {
             }
 
             public void put(XxTnaHEOImpl obj, Object value) {
-                obj.setBuyerId((BigDecimal)value);
+                obj.setBuyerId((Number)value);
             }
         }
         ,
@@ -68,7 +68,7 @@ public class XxTnaHEOImpl extends EntityImpl {
             }
 
             public void put(XxTnaHEOImpl obj, Object value) {
-                obj.setTnaDateId((BigDecimal)value);
+                obj.setTnaDateId((Number)value);
             }
         }
         ,
@@ -78,7 +78,7 @@ public class XxTnaHEOImpl extends EntityImpl {
             }
 
             public void put(XxTnaHEOImpl obj, Object value) {
-                obj.setDTnaDateId((BigDecimal)value);
+                obj.setDTnaDateId((Number)value);
             }
         }
         ,
@@ -88,7 +88,7 @@ public class XxTnaHEOImpl extends EntityImpl {
             }
 
             public void put(XxTnaHEOImpl obj, Object value) {
-                obj.setDepedencyValue((BigDecimal)value);
+                obj.setDepedencyValue((Number)value);
             }
         }
         ,
@@ -98,7 +98,7 @@ public class XxTnaHEOImpl extends EntityImpl {
             }
 
             public void put(XxTnaHEOImpl obj, Object value) {
-                obj.setDayDifference((BigDecimal)value);
+                obj.setDayDifference((Number)value);
             }
         }
         ,
@@ -109,6 +109,16 @@ public class XxTnaHEOImpl extends EntityImpl {
 
             public void put(XxTnaHEOImpl obj, Object value) {
                 obj.setDepedencyType((String)value);
+            }
+        }
+        ,
+        FobId {
+            public Object get(XxTnaHEOImpl obj) {
+                return obj.getFobId();
+            }
+
+            public void put(XxTnaHEOImpl obj, Object value) {
+                obj.setFobId((BigDecimal)value);
             }
         }
         ;
@@ -139,6 +149,7 @@ public class XxTnaHEOImpl extends EntityImpl {
         }
     }
 
+
     public static final int TNAHID = AttributesEnum.TnaHId.index();
     public static final int POCID = AttributesEnum.PocId.index();
     public static final int SYSTEMID = AttributesEnum.SystemId.index();
@@ -148,12 +159,14 @@ public class XxTnaHEOImpl extends EntityImpl {
     public static final int DEPEDENCYVALUE = AttributesEnum.DepedencyValue.index();
     public static final int DAYDIFFERENCE = AttributesEnum.DayDifference.index();
     public static final int DEPEDENCYTYPE = AttributesEnum.DepedencyType.index();
+    public static final int FOBID = AttributesEnum.FobId.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public XxTnaHEOImpl() {
     }
+
 
     /**
      * @return the definition object for this instance class.
@@ -185,15 +198,15 @@ public class XxTnaHEOImpl extends EntityImpl {
      * Gets the attribute value for PocId, using the alias name PocId.
      * @return the PocId
      */
-    public BigDecimal getPocId() {
-        return (BigDecimal)getAttributeInternal(POCID);
+    public Number getPocId() {
+        return (Number)getAttributeInternal(POCID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for PocId.
      * @param value value to set the PocId
      */
-    public void setPocId(BigDecimal value) {
+    public void setPocId(Number value) {
         setAttributeInternal(POCID, value);
     }
 
@@ -201,15 +214,15 @@ public class XxTnaHEOImpl extends EntityImpl {
      * Gets the attribute value for SystemId, using the alias name SystemId.
      * @return the SystemId
      */
-    public BigDecimal getSystemId() {
-        return (BigDecimal)getAttributeInternal(SYSTEMID);
+    public Number getSystemId() {
+        return (Number)getAttributeInternal(SYSTEMID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for SystemId.
      * @param value value to set the SystemId
      */
-    public void setSystemId(BigDecimal value) {
+    public void setSystemId(Number value) {
         setAttributeInternal(SYSTEMID, value);
     }
 
@@ -217,15 +230,15 @@ public class XxTnaHEOImpl extends EntityImpl {
      * Gets the attribute value for BuyerId, using the alias name BuyerId.
      * @return the BuyerId
      */
-    public BigDecimal getBuyerId() {
-        return (BigDecimal)getAttributeInternal(BUYERID);
+    public Number getBuyerId() {
+        return (Number)getAttributeInternal(BUYERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for BuyerId.
      * @param value value to set the BuyerId
      */
-    public void setBuyerId(BigDecimal value) {
+    public void setBuyerId(Number value) {
         setAttributeInternal(BUYERID, value);
     }
 
@@ -233,15 +246,15 @@ public class XxTnaHEOImpl extends EntityImpl {
      * Gets the attribute value for TnaDateId, using the alias name TnaDateId.
      * @return the TnaDateId
      */
-    public BigDecimal getTnaDateId() {
-        return (BigDecimal)getAttributeInternal(TNADATEID);
+    public Number getTnaDateId() {
+        return (Number)getAttributeInternal(TNADATEID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TnaDateId.
      * @param value value to set the TnaDateId
      */
-    public void setTnaDateId(BigDecimal value) {
+    public void setTnaDateId(Number value) {
         setAttributeInternal(TNADATEID, value);
     }
 
@@ -249,15 +262,15 @@ public class XxTnaHEOImpl extends EntityImpl {
      * Gets the attribute value for DTnaDateId, using the alias name DTnaDateId.
      * @return the DTnaDateId
      */
-    public BigDecimal getDTnaDateId() {
-        return (BigDecimal)getAttributeInternal(DTNADATEID);
+    public Number getDTnaDateId() {
+        return (Number)getAttributeInternal(DTNADATEID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for DTnaDateId.
      * @param value value to set the DTnaDateId
      */
-    public void setDTnaDateId(BigDecimal value) {
+    public void setDTnaDateId(Number value) {
         setAttributeInternal(DTNADATEID, value);
     }
 
@@ -265,15 +278,15 @@ public class XxTnaHEOImpl extends EntityImpl {
      * Gets the attribute value for DependencyValue, using the alias name DependencyValue.
      * @return the DependencyValue
      */
-    public BigDecimal getDepedencyValue() {
-        return (BigDecimal)getAttributeInternal(DEPEDENCYVALUE);
+    public Number getDepedencyValue() {
+        return (Number)getAttributeInternal(DEPEDENCYVALUE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for DependencyValue.
      * @param value value to set the DependencyValue
      */
-    public void setDepedencyValue(BigDecimal value) {
+    public void setDepedencyValue(Number value) {
         setAttributeInternal(DEPEDENCYVALUE, value);
     }
 
@@ -281,15 +294,15 @@ public class XxTnaHEOImpl extends EntityImpl {
      * Gets the attribute value for DayDifference, using the alias name DayDifference.
      * @return the DayDifference
      */
-    public BigDecimal getDayDifference() {
-        return (BigDecimal)getAttributeInternal(DAYDIFFERENCE);
+    public Number getDayDifference() {
+        return (Number)getAttributeInternal(DAYDIFFERENCE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for DayDifference.
      * @param value value to set the DayDifference
      */
-    public void setDayDifference(BigDecimal value) {
+    public void setDayDifference(Number value) {
         setAttributeInternal(DAYDIFFERENCE, value);
     }
 
@@ -307,6 +320,22 @@ public class XxTnaHEOImpl extends EntityImpl {
      */
     public void setDepedencyType(String value) {
         setAttributeInternal(DEPEDENCYTYPE, value);
+    }
+
+    /**
+     * Gets the attribute value for FobId, using the alias name FobId.
+     * @return the FobId
+     */
+    public BigDecimal getFobId() {
+        return (BigDecimal)getAttributeInternal(FOBID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FobId.
+     * @param value value to set the FobId
+     */
+    public void setFobId(BigDecimal value) {
+        setAttributeInternal(FOBID, value);
     }
 
     /**

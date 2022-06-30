@@ -4,10 +4,12 @@
              Package="view" ClientType="Generic">
   <pageMap>
     <page path="/DefaultSetup.jspx" usageId="view_DefaultSetupPageDef"/>
+    <page path="/Search.jspx" usageId="view_SearchPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DefaultSetupPageDef"
           path="view.pageDefs.DefaultSetupPageDef"/>
+    <page id="view_SearchPageDef" path="view.pageDefs.SearchPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.service"
