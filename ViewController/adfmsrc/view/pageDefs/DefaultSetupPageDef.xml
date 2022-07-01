@@ -12,7 +12,7 @@
                   id="XxTnaDatesVO1Query"/>
     <iterator Binds="BuyerVO1" RangeSize="25" DataControl="AppModuleDataControl"
               id="BuyerVO1Iterator"/>
-    <iterator Binds="XxTnaDefaultBuyerWiseVO1" RangeSize="25"
+    <iterator Binds="XxTnaDefaultBuyerWiseVO1" RangeSize="60"
               DataControl="AppModuleDataControl"
               id="XxTnaDefaultBuyerWiseVO1Iterator"/>
     <searchRegion Binds="XxTnaDefaultBuyerWiseVO1Iterator" Criteria=""

@@ -5,11 +5,13 @@
   <pageMap>
     <page path="/DefaultSetup.jspx" usageId="view_DefaultSetupPageDef"/>
     <page path="/Search.jspx" usageId="view_SearchPageDef"/>
+    <page path="/Edit.jspx" usageId="view_EditPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DefaultSetupPageDef"
           path="view.pageDefs.DefaultSetupPageDef"/>
     <page id="view_SearchPageDef" path="view.pageDefs.SearchPageDef"/>
+    <page id="view_EditPageDef" path="view.pageDefs.EditPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.service"

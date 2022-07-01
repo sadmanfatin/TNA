@@ -123,7 +123,7 @@
     Name="FobId"
     ColumnName="FOB_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="XX_TNA_H">
     <DesignTime>

@@ -16,7 +16,7 @@
                                     label="#{bindings.BuyerVO1.label}"
                                     required="#{bindings.BuyerVO1.hints.mandatory}"
                                     shortDesc="#{bindings.BuyerVO1.hints.tooltip}"
-                                    id="soc1">
+                                    id="soc1" autoSubmit="true">
                   <f:selectItems value="#{bindings.BuyerVO1.items}" id="si1"/>
                 </af:selectOneChoice>
                 <af:panelCollection id="pc1" styleClass="AFStretchWidth">
@@ -49,7 +49,8 @@
                             selectedRowKeys="#{bindings.XxTnaDefaultBuyerWiseVO1.collectionModel.selectedRow}"
                             selectionListener="#{bindings.XxTnaDefaultBuyerWiseVO1.collectionModel.makeCurrent}"
                             rowSelection="single" id="t2" width="100%"
-                            partialTriggers="::cb4 ::cb5">
+                            partialTriggers="::cb4 ::cb5 :::soc1"
+                            autoHeightRows="40">
                     <af:column sortProperty="TbwId" filterable="true"
                                sortable="true"
                                headerText="#{bindings.XxTnaDefaultBuyerWiseVO1.hints.TbwId.label}"

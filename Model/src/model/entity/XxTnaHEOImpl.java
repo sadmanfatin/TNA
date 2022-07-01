@@ -118,7 +118,7 @@ public class XxTnaHEOImpl extends EntityImpl {
             }
 
             public void put(XxTnaHEOImpl obj, Object value) {
-                obj.setFobId((BigDecimal)value);
+                obj.setFobId((Number)value);
             }
         }
         ;
@@ -326,15 +326,15 @@ public class XxTnaHEOImpl extends EntityImpl {
      * Gets the attribute value for FobId, using the alias name FobId.
      * @return the FobId
      */
-    public BigDecimal getFobId() {
-        return (BigDecimal)getAttributeInternal(FOBID);
+    public Number getFobId() {
+        return (Number)getAttributeInternal(FOBID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FobId.
      * @param value value to set the FobId
      */
-    public void setFobId(BigDecimal value) {
+    public void setFobId(Number value) {
         setAttributeInternal(FOBID, value);
     }
 

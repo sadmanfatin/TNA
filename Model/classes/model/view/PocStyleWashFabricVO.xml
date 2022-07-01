@@ -397,6 +397,11 @@ FROM POC_STYLE_WASH_FABRIC_VIEW_V PV]]>
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
+  <ViewLinkAccessor
+    Name="XxTnaHVO"
+    ViewLink="model.view.PocStyleWashFabricVO_vs_XxTnaHVO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

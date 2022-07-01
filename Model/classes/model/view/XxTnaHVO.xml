@@ -14,7 +14,8 @@
        XxTnaHEO.D_TNA_DATE_ID, 
        XxTnaHEO.DEPEDENCY_VALUE, 
        XxTnaHEO.DAY_DIFFERENCE, 
-       XxTnaHEO.DEPEDENCY_TYPE"
+       XxTnaHEO.DEPEDENCY_TYPE, 
+       XxTnaHEO.FOB_ID"
   FromList="XX_TNA_H XxTnaHEO"
   BindingStyle="OracleName"
   CustomQuery="false"
@@ -81,4 +82,10 @@
     EntityAttrName="DepedencyType"
     EntityUsage="XxTnaHEO"
     AliasName="DEPEDENCY_TYPE"/>
+  <ViewAttribute
+    Name="FobId"
+    PrecisionRule="true"
+    EntityAttrName="FobId"
+    EntityUsage="XxTnaHEO"
+    AliasName="FOB_ID"/>
 </ViewObject>

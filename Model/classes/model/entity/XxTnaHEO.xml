@@ -23,7 +23,7 @@
     ColumnName="TNA_H_ID"
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
-    ColumnType="BIGINT"
+    ColumnType="NUMBER"
     TableName="XX_TNA_H"
     PrimaryKey="true">
     <DesignTime>
@@ -117,6 +117,17 @@
     TableName="XX_TNA_H">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FobId"
+    ColumnName="FOB_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="XX_TNA_H">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
   </Attribute>
   <Key

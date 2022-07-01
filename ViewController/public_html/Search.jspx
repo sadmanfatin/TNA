@@ -107,7 +107,12 @@
               </af:table>
               <af:panelCollection id="pc1" inlineStyle="width:1033px;">
                 <f:facet name="menus"/>
-                <f:facet name="toolbar"/>
+                <f:facet name="toolbar">
+                  <af:toolbar id="t1">
+                    <af:commandButton text="Populate TNA" id="cb1"
+                                      actionListener="#{ManagedBean.populateTna}"/>
+                  </af:toolbar>
+                </f:facet>
                 <f:facet name="statusbar"/>
               </af:panelCollection>
             </af:panelGroupLayout>
