@@ -75,7 +75,6 @@
   <SQLQuery>
     <![CDATA[SELECT 
    PV.POC_ID,
-   PV.FOB_ID, 
    PV.SYSTEM_ID,
    PV.BUYER_ID,
    PV.BUYER_NAME,
@@ -84,10 +83,10 @@
    PV.WASH_NAME,
    PV.REF_CODE ,
    PV.ITEM_CODE,
-   PV.SUPPLIER_ID,
-   PV.SUPPLIER_NAME,
-   PV.COUNTRY_CODE,
-   PV.SUPPLIER_COUNTRY,          
+   PV.FABRIC_SUPPLIER_ID,
+   PV.FABRIC_SUPPLIER_NAME,
+   PV.FABRIC_SUPPLIER_COUNTRY_CODE,
+   PV.FABRIC_SUPPLIER_COUNTRY,          
    PV.ORDER_QTY
 FROM POC_STYLE_WASH_FABRIC_VIEW_V PV]]>
   </SQLQuery>
@@ -97,36 +96,29 @@ FROM POC_STYLE_WASH_FABRIC_VIEW_V PV]]>
     IsPersistent="false"
     IsNotNull="true"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
-    ColumnType="BIGINT"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
     AliasName="POC_ID"
     Expression="POC_ID"
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="FobId"
-    IsUpdateable="false"
-    IsPersistent="false"
-    IsNotNull="true"
-    PrecisionRule="true"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    AliasName="FOB_ID"
-    Expression="FOB_ID"
-    SQLType="NUMERIC">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="39"/>
-    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.view.PocStyleWashFabricVO.PocId_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.view.PocStyleWashFabricVO.PocId_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="SystemId"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="SYSTEM_ID"
     Expression="SYSTEM_ID"
@@ -134,12 +126,20 @@ FROM POC_STYLE_WASH_FABRIC_VIEW_V PV]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.view.PocStyleWashFabricVO.SystemId_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.view.PocStyleWashFabricVO.SystemId_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="BuyerId"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="BUYER_ID"
     Expression="BUYER_ID"
@@ -260,60 +260,60 @@ FROM POC_STYLE_WASH_FABRIC_VIEW_V PV]]>
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
-    Name="SupplierId"
+    Name="FabricSupplierId"
     IsUpdateable="false"
     IsPersistent="false"
     IsNotNull="true"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    AliasName="SUPPLIER_ID"
-    Expression="SUPPLIER_ID"
+    AliasName="FABRIC_SUPPLIER_ID"
+    Expression="FABRIC_SUPPLIER_ID"
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
-    Name="SupplierName"
+    Name="FabricSupplierName"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Precision="240"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    AliasName="SUPPLIER_NAME"
-    Expression="SUPPLIER_NAME"
+    AliasName="FABRIC_SUPPLIER_NAME"
+    Expression="FABRIC_SUPPLIER_NAME"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="240"/>
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
-    Name="CountryCode"
+    Name="FabricSupplierCountryCode"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Precision="60"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    AliasName="COUNTRY_CODE"
-    Expression="COUNTRY_CODE"
+    AliasName="FABRIC_SUPPLIER_COUNTRY_CODE"
+    Expression="FABRIC_SUPPLIER_COUNTRY_CODE"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="60"/>
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
-    Name="SupplierCountry"
+    Name="FabricSupplierCountry"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Precision="30"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    AliasName="SUPPLIER_COUNTRY"
-    Expression="SUPPLIER_COUNTRY"
+    AliasName="FABRIC_SUPPLIER_COUNTRY"
+    Expression="FABRIC_SUPPLIER_COUNTRY"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="30"/>
@@ -324,7 +324,7 @@ FROM POC_STYLE_WASH_FABRIC_VIEW_V PV]]>
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="ORDER_QTY"
     Expression="ORDER_QTY"
@@ -386,12 +386,6 @@ FROM POC_STYLE_WASH_FABRIC_VIEW_V PV]]>
       <ViewCriteriaItem
         Name="WashName"
         ViewAttribute="WashName"
-        Operator="CONTAINS"
-        Conjunction="AND"
-        Required="Optional"/>
-      <ViewCriteriaItem
-        Name="SupplierCountry"
-        ViewAttribute="SupplierCountry"
         Operator="CONTAINS"
         Conjunction="AND"
         Required="Optional"/>

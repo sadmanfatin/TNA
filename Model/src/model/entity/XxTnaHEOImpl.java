@@ -2,6 +2,8 @@ package model.entity;
 
 import java.math.BigDecimal;
 
+import java.sql.Date;
+
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
 import oracle.jbo.domain.Number;
@@ -82,16 +84,6 @@ public class XxTnaHEOImpl extends EntityImpl {
             }
         }
         ,
-        DepedencyValue {
-            public Object get(XxTnaHEOImpl obj) {
-                return obj.getDepedencyValue();
-            }
-
-            public void put(XxTnaHEOImpl obj, Object value) {
-                obj.setDepedencyValue((Number)value);
-            }
-        }
-        ,
         DayDifference {
             public Object get(XxTnaHEOImpl obj) {
                 return obj.getDayDifference();
@@ -102,23 +94,53 @@ public class XxTnaHEOImpl extends EntityImpl {
             }
         }
         ,
-        DepedencyType {
+        DependencyValue {
             public Object get(XxTnaHEOImpl obj) {
-                return obj.getDepedencyType();
+                return obj.getDependencyValue();
             }
 
             public void put(XxTnaHEOImpl obj, Object value) {
-                obj.setDepedencyType((String)value);
+                obj.setDependencyValue((Number)value);
             }
         }
         ,
-        FobId {
+        DependencyType {
             public Object get(XxTnaHEOImpl obj) {
-                return obj.getFobId();
+                return obj.getDependencyType();
             }
 
             public void put(XxTnaHEOImpl obj, Object value) {
-                obj.setFobId((Number)value);
+                obj.setDependencyType((String)value);
+            }
+        }
+        ,
+        TnaVersionId {
+            public Object get(XxTnaHEOImpl obj) {
+                return obj.getTnaVersionId();
+            }
+
+            public void put(XxTnaHEOImpl obj, Object value) {
+                obj.setTnaVersionId((Number)value);
+            }
+        }
+        ,
+        FabricCountry {
+            public Object get(XxTnaHEOImpl obj) {
+                return obj.getFabricCountry();
+            }
+
+            public void put(XxTnaHEOImpl obj, Object value) {
+                obj.setFabricCountry((String)value);
+            }
+        }
+        ,
+        TnaDateValue {
+            public Object get(XxTnaHEOImpl obj) {
+                return obj.getTnaDateValue();
+            }
+
+            public void put(XxTnaHEOImpl obj, Object value) {
+                obj.setTnaDateValue((Date)value);
             }
         }
         ;
@@ -156,10 +178,12 @@ public class XxTnaHEOImpl extends EntityImpl {
     public static final int BUYERID = AttributesEnum.BuyerId.index();
     public static final int TNADATEID = AttributesEnum.TnaDateId.index();
     public static final int DTNADATEID = AttributesEnum.DTnaDateId.index();
-    public static final int DEPEDENCYVALUE = AttributesEnum.DepedencyValue.index();
     public static final int DAYDIFFERENCE = AttributesEnum.DayDifference.index();
-    public static final int DEPEDENCYTYPE = AttributesEnum.DepedencyType.index();
-    public static final int FOBID = AttributesEnum.FobId.index();
+    public static final int DEPENDENCYVALUE = AttributesEnum.DependencyValue.index();
+    public static final int DEPENDENCYTYPE = AttributesEnum.DependencyType.index();
+    public static final int TNAVERSIONID = AttributesEnum.TnaVersionId.index();
+    public static final int FABRICCOUNTRY = AttributesEnum.FabricCountry.index();
+    public static final int TNADATEVALUE = AttributesEnum.TnaDateValue.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -274,21 +298,6 @@ public class XxTnaHEOImpl extends EntityImpl {
         setAttributeInternal(DTNADATEID, value);
     }
 
-    /**
-     * Gets the attribute value for DependencyValue, using the alias name DependencyValue.
-     * @return the DependencyValue
-     */
-    public Number getDepedencyValue() {
-        return (Number)getAttributeInternal(DEPEDENCYVALUE);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for DependencyValue.
-     * @param value value to set the DependencyValue
-     */
-    public void setDepedencyValue(Number value) {
-        setAttributeInternal(DEPEDENCYVALUE, value);
-    }
 
     /**
      * Gets the attribute value for DayDifference, using the alias name DayDifference.
@@ -306,36 +315,85 @@ public class XxTnaHEOImpl extends EntityImpl {
         setAttributeInternal(DAYDIFFERENCE, value);
     }
 
+
     /**
-     * Gets the attribute value for DepedencyType, using the alias name DepedencyType.
-     * @return the DepedencyType
+     * Gets the attribute value for DependencyValue, using the alias name DependencyValue.
+     * @return the DependencyValue
      */
-    public String getDepedencyType() {
-        return (String)getAttributeInternal(DEPEDENCYTYPE);
+    public Number getDependencyValue() {
+        return (Number)getAttributeInternal(DEPENDENCYVALUE);
     }
 
     /**
-     * Sets <code>value</code> as the attribute value for DepedencyType.
-     * @param value value to set the DepedencyType
+     * Sets <code>value</code> as the attribute value for DependencyValue.
+     * @param value value to set the DependencyValue
      */
-    public void setDepedencyType(String value) {
-        setAttributeInternal(DEPEDENCYTYPE, value);
+    public void setDependencyValue(Number value) {
+        setAttributeInternal(DEPENDENCYVALUE, value);
     }
 
     /**
-     * Gets the attribute value for FobId, using the alias name FobId.
-     * @return the FobId
+     * Gets the attribute value for DependencyType, using the alias name DependencyType.
+     * @return the DependencyType
      */
-    public Number getFobId() {
-        return (Number)getAttributeInternal(FOBID);
+    public String getDependencyType() {
+        return (String)getAttributeInternal(DEPENDENCYTYPE);
     }
 
     /**
-     * Sets <code>value</code> as the attribute value for FobId.
-     * @param value value to set the FobId
+     * Sets <code>value</code> as the attribute value for DependencyType.
+     * @param value value to set the DependencyType
      */
-    public void setFobId(Number value) {
-        setAttributeInternal(FOBID, value);
+    public void setDependencyType(String value) {
+        setAttributeInternal(DEPENDENCYTYPE, value);
+    }
+
+    /**
+     * Gets the attribute value for TnaVersionId, using the alias name TnaVersionId.
+     * @return the TnaVersionId
+     */
+    public Number getTnaVersionId() {
+        return (Number)getAttributeInternal(TNAVERSIONID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TnaVersionId.
+     * @param value value to set the TnaVersionId
+     */
+    public void setTnaVersionId(Number value) {
+        setAttributeInternal(TNAVERSIONID, value);
+    }
+
+    /**
+     * Gets the attribute value for FabricCountry, using the alias name FabricCountry.
+     * @return the FabricCountry
+     */
+    public String getFabricCountry() {
+        return (String)getAttributeInternal(FABRICCOUNTRY);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FabricCountry.
+     * @param value value to set the FabricCountry
+     */
+    public void setFabricCountry(String value) {
+        setAttributeInternal(FABRICCOUNTRY, value);
+    }
+
+    /**
+     * Gets the attribute value for TnaDateValue, using the alias name TnaDateValue.
+     * @return the TnaDateValue
+     */
+    public Date getTnaDateValue() {
+        return (Date)getAttributeInternal(TNADATEVALUE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TnaDateValue.
+     * @param value value to set the TnaDateValue
+     */
+    public void setTnaDateValue(Date value) {
+        setAttributeInternal(TNADATEVALUE, value);
     }
 
     /**

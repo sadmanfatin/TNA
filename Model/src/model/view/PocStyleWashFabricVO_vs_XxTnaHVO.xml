@@ -27,6 +27,7 @@
     <AttrArray Name="Attributes">
       <Item Value="model.view.PocStyleWashFabricVO.PocId"/>
       <Item Value="model.view.PocStyleWashFabricVO.SystemId"/>
+      <Item Value="model.view.PocStyleWashFabricVO.FabricSupplierCountry"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
@@ -40,6 +41,7 @@
     <AttrArray Name="Attributes">
       <Item Value="model.view.XxTnaHVO.PocId"/>
       <Item Value="model.view.XxTnaHVO.SystemId"/>
+      <Item Value="model.view.XxTnaHVO.FabricCountry"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ResourceBundle>

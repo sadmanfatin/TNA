@@ -10,14 +10,14 @@
       <af:form id="f1">
         <af:panelStretchLayout id="psl1">
           <f:facet name="center">
-            <af:panelGroupLayout layout="vertical" id="pgl1">
+            <af:panelGroupLayout id="pgl1">
               <af:panelHeader text="PocStyleWashFabricVO1" id="ph1">
                 <af:query id="qryId1" headerText="Search" disclosed="true"
                           value="#{bindings.PocStyleWashFabricVOCriteriaQuery.queryDescriptor}"
                           model="#{bindings.PocStyleWashFabricVOCriteriaQuery.queryModel}"
                           queryListener="#{bindings.PocStyleWashFabricVOCriteriaQuery.processQuery}"
                           queryOperationListener="#{bindings.PocStyleWashFabricVOCriteriaQuery.processQueryOperation}"
-                          resultComponentId="::resId1"/>
+                          resultComponentId="::t2"/>
               </af:panelHeader>
               <af:table value="#{bindings.PocStyleWashFabricVO1.collectionModel}"
                         var="row"
@@ -25,95 +25,234 @@
                         emptyText="#{bindings.PocStyleWashFabricVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
                         fetchSize="#{bindings.PocStyleWashFabricVO1.rangeSize}"
                         rowBandingInterval="0"
+                        filterModel="#{bindings.PocStyleWashFabricVOCriteriaQuery.queryDescriptor}"
+                        queryListener="#{bindings.PocStyleWashFabricVOCriteriaQuery.processQuery}"
+                        filterVisible="true" varStatus="vs"
                         selectedRowKeys="#{bindings.PocStyleWashFabricVO1.collectionModel.selectedRow}"
                         selectionListener="#{bindings.PocStyleWashFabricVO1.collectionModel.makeCurrent}"
-                        rowSelection="single" id="resId1" width="100%"
-                        inlineStyle="height:180.0px;">
-                <af:column sortProperty="PocId" sortable="false"
+                        rowSelection="single" id="t2"
+                        styleClass="AFStretchWidth"
+                        inlineStyle="height:160.0px;">
+                <af:column sortProperty="PocId" filterable="true"
+                           sortable="false"
                            headerText="#{bindings.PocStyleWashFabricVO1.hints.PocId.label}"
-                           id="resId1c1">
-                  <af:outputText value="#{row.PocId}" id="ot9"/>
+                           id="c18" width="60">
+                  <af:outputText value="#{row.PocId}" id="ot7"/>
                 </af:column>
-                <af:column sortProperty="FobId" sortable="false"
-                           headerText="#{bindings.PocStyleWashFabricVO1.hints.FobId.label}"
-                           id="resId1c2">
-                  <af:outputText value="#{row.FobId}" id="ot7"/>
-                </af:column>
-                <af:column sortProperty="SystemId" sortable="false"
+                <af:column sortProperty="SystemId" filterable="true"
+                           sortable="false"
                            headerText="#{bindings.PocStyleWashFabricVO1.hints.SystemId.label}"
-                           id="resId1c3">
+                           id="c16" width="60">
                   <af:outputText value="#{row.SystemId}" id="ot10"/>
                 </af:column>
-                <af:column sortProperty="BuyerId" sortable="false"
+                <af:column sortProperty="BuyerId" filterable="true"
+                           sortable="false"
                            headerText="#{bindings.PocStyleWashFabricVO1.hints.BuyerId.label}"
-                           id="resId1c4">
-                  <af:outputText value="#{row.BuyerId}" id="ot4"/>
+                           id="c8" width="60">
+                  <af:outputText value="#{row.BuyerId}" id="ot14"/>
                 </af:column>
-                <af:column sortProperty="BuyerName" sortable="false"
+                <af:column sortProperty="BuyerName" filterable="true"
+                           sortable="false"
                            headerText="#{bindings.PocStyleWashFabricVO1.hints.BuyerName.label}"
-                           id="resId1c5">
-                  <af:outputText value="#{row.BuyerName}" id="ot3"/>
+                           id="c13">
+                  <af:outputText value="#{row.BuyerName}" id="ot18"/>
                 </af:column>
-                <af:column sortProperty="Season" sortable="false"
+                <af:column sortProperty="Season" filterable="true"
+                           sortable="false"
                            headerText="#{bindings.PocStyleWashFabricVO1.hints.Season.label}"
-                           id="resId1c6">
-                  <af:outputText value="#{row.Season}" id="ot11"/>
+                           id="c10">
+                  <af:outputText value="#{row.Season}" id="ot12"/>
                 </af:column>
-                <af:column sortProperty="Style" sortable="false"
+                <af:column sortProperty="Style" filterable="true"
+                           sortable="false"
                            headerText="#{bindings.PocStyleWashFabricVO1.hints.Style.label}"
-                           id="resId1c7">
-                  <af:outputText value="#{row.Style}" id="ot14"/>
+                           id="c15">
+                  <af:outputText value="#{row.Style}" id="ot6"/>
                 </af:column>
-                <af:column sortProperty="WashName" sortable="false"
+                <af:column sortProperty="WashName" filterable="true"
+                           sortable="false"
                            headerText="#{bindings.PocStyleWashFabricVO1.hints.WashName.label}"
-                           id="resId1c8">
-                  <af:outputText value="#{row.WashName}" id="ot6"/>
+                           id="c11">
+                  <af:outputText value="#{row.WashName}" id="ot4"/>
                 </af:column>
-                <af:column sortProperty="RefCode" sortable="false"
+                <af:column sortProperty="RefCode" filterable="true"
+                           sortable="false"
                            headerText="#{bindings.PocStyleWashFabricVO1.hints.RefCode.label}"
-                           id="resId1c9">
-                  <af:outputText value="#{row.RefCode}" id="ot1"/>
+                           id="c3">
+                  <af:outputText value="#{row.RefCode}" id="ot16"/>
                 </af:column>
-                <af:column sortProperty="ItemCode" sortable="false"
+                <af:column sortProperty="ItemCode" filterable="true"
+                           sortable="false"
                            headerText="#{bindings.PocStyleWashFabricVO1.hints.ItemCode.label}"
-                           id="resId1c10">
+                           id="c9">
                   <af:outputText value="#{row.ItemCode}" id="ot2"/>
                 </af:column>
-                <af:column sortProperty="SupplierId" sortable="false"
-                           headerText="#{bindings.PocStyleWashFabricVO1.hints.SupplierId.label}"
-                           id="resId1c11">
-                  <af:outputText value="#{row.SupplierId}" id="ot13"/>
+                <af:column sortProperty="FabricSupplierId" filterable="true"
+                           sortable="false"
+                           headerText="#{bindings.PocStyleWashFabricVO1.hints.FabricSupplierId.label}"
+                           id="c17">
+                  <af:outputText value="#{row.FabricSupplierId}" id="ot1"/>
                 </af:column>
-                <af:column sortProperty="SupplierName" sortable="false"
-                           headerText="#{bindings.PocStyleWashFabricVO1.hints.SupplierName.label}"
-                           id="resId1c12">
-                  <af:outputText value="#{row.SupplierName}" id="ot12"/>
+                <af:column sortProperty="FabricSupplierName" filterable="true"
+                           sortable="false"
+                           headerText="#{bindings.PocStyleWashFabricVO1.hints.FabricSupplierName.label}"
+                           id="c4">
+                  <af:outputText value="#{row.FabricSupplierName}" id="ot9"/>
                 </af:column>
-                <af:column sortProperty="CountryCode" sortable="false"
-                           headerText="#{bindings.PocStyleWashFabricVO1.hints.CountryCode.label}"
-                           id="resId1c13">
-                  <af:outputText value="#{row.CountryCode}" id="ot5"/>
+                <af:column sortProperty="FabricSupplierCountryCode"
+                           filterable="true" sortable="false"
+                           headerText="#{bindings.PocStyleWashFabricVO1.hints.FabricSupplierCountryCode.label}"
+                           id="c2">
+                  <af:outputText value="#{row.FabricSupplierCountryCode}"
+                                 id="ot8"/>
                 </af:column>
-                <af:column sortProperty="SupplierCountry" sortable="false"
-                           headerText="#{bindings.PocStyleWashFabricVO1.hints.SupplierCountry.label}"
-                           id="resId1c14">
-                  <af:outputText value="#{row.SupplierCountry}" id="ot15"/>
+                <af:column sortProperty="FabricSupplierCountry"
+                           filterable="true" sortable="false"
+                           headerText="#{bindings.PocStyleWashFabricVO1.hints.FabricSupplierCountry.label}"
+                           id="c6">
+                  <af:outputText value="#{row.FabricSupplierCountry}"
+                                 id="ot15"/>
                 </af:column>
-                <af:column sortProperty="OrderQty" sortable="false"
+                <af:column sortProperty="OrderQty" filterable="true"
+                           sortable="false"
                            headerText="#{bindings.PocStyleWashFabricVO1.hints.OrderQty.label}"
-                           id="resId1c15">
-                  <af:outputText value="#{row.OrderQty}" id="ot8"/>
+                           id="c12" width="60">
+                  <af:outputText value="#{row.OrderQty}" id="ot17"/>
                 </af:column>
               </af:table>
-              <af:panelCollection id="pc1" inlineStyle="width:1033px;">
+              <af:panelCollection id="pc1" styleClass="AFStretchWidth">
                 <f:facet name="menus"/>
                 <f:facet name="toolbar">
                   <af:toolbar id="t1">
                     <af:commandButton text="Populate TNA" id="cb1"
                                       actionListener="#{ManagedBean.populateTna}"/>
+                    <af:commandButton text="Edit" id="cb2" action="go to edit"/>
                   </af:toolbar>
                 </f:facet>
                 <f:facet name="statusbar"/>
+                <af:table value="#{bindings.XxTnaHVO1.collectionModel}"
+                          var="row" rows="#{bindings.XxTnaHVO1.rangeSize}"
+                          emptyText="#{bindings.XxTnaHVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.XxTnaHVO1.rangeSize}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.XxTnaHVO1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.XxTnaHVO1.collectionModel.makeCurrent}"
+                          rowSelection="single" id="t3">
+                  <af:column sortProperty="BuyerId" sortable="false"
+                             headerText="#{bindings.XxTnaHVO1.hints.BuyerId.label}"
+                             id="c1">
+                    <af:inputText value="#{row.bindings.BuyerId.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.BuyerId.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.BuyerId.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.BuyerId.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.BuyerId.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.BuyerId.tooltip}"
+                                  id="it5">
+                      <f:validator binding="#{row.bindings.BuyerId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.XxTnaHVO1.hints.BuyerId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="TnaDateId" sortable="false"
+                             headerText="#{bindings.XxTnaHVO1.hints.TnaDateId.label}"
+                             id="c14">
+                    <af:inputText value="#{row.bindings.TnaDateId.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.TnaDateId.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.TnaDateId.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.TnaDateId.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.TnaDateId.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.TnaDateId.tooltip}"
+                                  id="it4">
+                      <f:validator binding="#{row.bindings.TnaDateId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.XxTnaHVO1.hints.TnaDateId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="DTnaDateId" sortable="false"
+                             headerText="#{bindings.XxTnaHVO1.hints.DTnaDateId.label}"
+                             id="c21">
+                    <af:inputText value="#{row.bindings.DTnaDateId.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.DTnaDateId.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.DTnaDateId.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.DTnaDateId.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.DTnaDateId.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.DTnaDateId.tooltip}"
+                                  id="it3">
+                      <f:validator binding="#{row.bindings.DTnaDateId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.XxTnaHVO1.hints.DTnaDateId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="DayDifference" sortable="false"
+                             headerText="#{bindings.XxTnaHVO1.hints.DayDifference.label}"
+                             id="c22">
+                    <af:inputText value="#{row.bindings.DayDifference.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.DayDifference.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.DayDifference.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.DayDifference.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.DayDifference.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.DayDifference.tooltip}"
+                                  id="it6">
+                      <f:validator binding="#{row.bindings.DayDifference.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.XxTnaHVO1.hints.DayDifference.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="DependencyType" sortable="false"
+                             headerText="#{bindings.XxTnaHVO1.hints.DependencyType.label}"
+                             id="c19">
+                    <af:inputText value="#{row.bindings.DependencyType.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.DependencyType.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.DependencyType.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.DependencyType.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.DependencyType.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.DependencyType.tooltip}"
+                                  id="it7">
+                      <f:validator binding="#{row.bindings.DependencyType.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="DependencyValue" sortable="false"
+                             headerText="#{bindings.XxTnaHVO1.hints.DependencyValue.label}"
+                             id="c5">
+                    <af:inputText value="#{row.bindings.DependencyValue.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.DependencyValue.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.DependencyValue.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.DependencyValue.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.DependencyValue.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.DependencyValue.tooltip}"
+                                  id="it1">
+                      <f:validator binding="#{row.bindings.DependencyValue.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.XxTnaHVO1.hints.DependencyValue.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="TnaVersionId" sortable="false"
+                             headerText="#{bindings.XxTnaHVO1.hints.TnaVersionId.label}"
+                             id="c7">
+                    <af:inputText value="#{row.bindings.TnaVersionId.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.TnaVersionId.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.TnaVersionId.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.TnaVersionId.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.TnaVersionId.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.TnaVersionId.tooltip}"
+                                  id="it8">
+                      <f:validator binding="#{row.bindings.TnaVersionId.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="FabricCountry" sortable="false"
+                             headerText="#{bindings.XxTnaHVO1.hints.FabricCountry.label}"
+                             id="c20">
+                    <af:inputText value="#{row.bindings.FabricCountry.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.FabricCountry.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.FabricCountry.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.FabricCountry.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.FabricCountry.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.FabricCountry.tooltip}"
+                                  id="it2">
+                      <f:validator binding="#{row.bindings.FabricCountry.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
               </af:panelCollection>
             </af:panelGroupLayout>
             <!-- id="af_one_column_stretched"   -->

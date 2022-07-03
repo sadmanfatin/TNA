@@ -10,162 +10,286 @@
       <af:form id="f1">
         <af:panelStretchLayout id="psl1">
           <f:facet name="center">
-            <af:table value="#{bindings.XxTnaHVO1.collectionModel}" var="row"
-                      rows="#{bindings.XxTnaHVO1.rangeSize}"
-                      emptyText="#{bindings.XxTnaHVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                      fetchSize="#{bindings.XxTnaHVO1.rangeSize}"
-                      rowBandingInterval="0"
-                      selectedRowKeys="#{bindings.XxTnaHVO1.collectionModel.selectedRow}"
-                      selectionListener="#{bindings.XxTnaHVO1.collectionModel.makeCurrent}"
-                      rowSelection="single" id="t1">
-              <af:column sortProperty="TnaHId" sortable="false"
-                         headerText="#{bindings.XxTnaHVO1.hints.TnaHId.label}"
-                         id="c4">
-                <af:inputText value="#{row.bindings.TnaHId.inputValue}"
-                              label="#{bindings.XxTnaHVO1.hints.TnaHId.label}"
-                              required="#{bindings.XxTnaHVO1.hints.TnaHId.mandatory}"
-                              columns="#{bindings.XxTnaHVO1.hints.TnaHId.displayWidth}"
-                              maximumLength="#{bindings.XxTnaHVO1.hints.TnaHId.precision}"
-                              shortDesc="#{bindings.XxTnaHVO1.hints.TnaHId.tooltip}"
-                              id="it9">
-                  <f:validator binding="#{row.bindings.TnaHId.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.XxTnaHVO1.hints.TnaHId.format}"/>
-                </af:inputText>
-              </af:column>
-              <af:column sortProperty="PocId" sortable="false"
-                         headerText="#{bindings.XxTnaHVO1.hints.PocId.label}"
-                         id="c6">
-                <af:inputText value="#{row.bindings.PocId.inputValue}"
-                              label="#{bindings.XxTnaHVO1.hints.PocId.label}"
-                              required="#{bindings.XxTnaHVO1.hints.PocId.mandatory}"
-                              columns="#{bindings.XxTnaHVO1.hints.PocId.displayWidth}"
-                              maximumLength="#{bindings.XxTnaHVO1.hints.PocId.precision}"
-                              shortDesc="#{bindings.XxTnaHVO1.hints.PocId.tooltip}"
-                              id="it10">
-                  <f:validator binding="#{row.bindings.PocId.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.XxTnaHVO1.hints.PocId.format}"/>
-                </af:inputText>
-              </af:column>
-              <af:column sortProperty="SystemId" sortable="false"
-                         headerText="#{bindings.XxTnaHVO1.hints.SystemId.label}"
-                         id="c7">
-                <af:inputText value="#{row.bindings.SystemId.inputValue}"
-                              label="#{bindings.XxTnaHVO1.hints.SystemId.label}"
-                              required="#{bindings.XxTnaHVO1.hints.SystemId.mandatory}"
-                              columns="#{bindings.XxTnaHVO1.hints.SystemId.displayWidth}"
-                              maximumLength="#{bindings.XxTnaHVO1.hints.SystemId.precision}"
-                              shortDesc="#{bindings.XxTnaHVO1.hints.SystemId.tooltip}"
-                              id="it5">
-                  <f:validator binding="#{row.bindings.SystemId.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.XxTnaHVO1.hints.SystemId.format}"/>
-                </af:inputText>
-              </af:column>
-              <af:column sortProperty="BuyerId" sortable="false"
-                         headerText="#{bindings.XxTnaHVO1.hints.BuyerId.label}"
-                         id="c9">
-                <af:inputText value="#{row.bindings.BuyerId.inputValue}"
-                              label="#{bindings.XxTnaHVO1.hints.BuyerId.label}"
-                              required="#{bindings.XxTnaHVO1.hints.BuyerId.mandatory}"
-                              columns="#{bindings.XxTnaHVO1.hints.BuyerId.displayWidth}"
-                              maximumLength="#{bindings.XxTnaHVO1.hints.BuyerId.precision}"
-                              shortDesc="#{bindings.XxTnaHVO1.hints.BuyerId.tooltip}"
-                              id="it8">
-                  <f:validator binding="#{row.bindings.BuyerId.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.XxTnaHVO1.hints.BuyerId.format}"/>
-                </af:inputText>
-              </af:column>
-              <af:column sortProperty="TnaDateId" sortable="false"
-                         headerText="#{bindings.XxTnaHVO1.hints.TnaDateId.label}"
-                         id="c5">
-                <af:inputText value="#{row.bindings.TnaDateId.inputValue}"
-                              label="#{bindings.XxTnaHVO1.hints.TnaDateId.label}"
-                              required="#{bindings.XxTnaHVO1.hints.TnaDateId.mandatory}"
-                              columns="#{bindings.XxTnaHVO1.hints.TnaDateId.displayWidth}"
-                              maximumLength="#{bindings.XxTnaHVO1.hints.TnaDateId.precision}"
-                              shortDesc="#{bindings.XxTnaHVO1.hints.TnaDateId.tooltip}"
-                              id="it3">
-                  <f:validator binding="#{row.bindings.TnaDateId.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.XxTnaHVO1.hints.TnaDateId.format}"/>
-                </af:inputText>
-              </af:column>
-              <af:column sortProperty="DTnaDateId" sortable="false"
-                         headerText="#{bindings.XxTnaHVO1.hints.DTnaDateId.label}"
-                         id="c10">
-                <af:inputText value="#{row.bindings.DTnaDateId.inputValue}"
-                              label="#{bindings.XxTnaHVO1.hints.DTnaDateId.label}"
-                              required="#{bindings.XxTnaHVO1.hints.DTnaDateId.mandatory}"
-                              columns="#{bindings.XxTnaHVO1.hints.DTnaDateId.displayWidth}"
-                              maximumLength="#{bindings.XxTnaHVO1.hints.DTnaDateId.precision}"
-                              shortDesc="#{bindings.XxTnaHVO1.hints.DTnaDateId.tooltip}"
-                              id="it2">
-                  <f:validator binding="#{row.bindings.DTnaDateId.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.XxTnaHVO1.hints.DTnaDateId.format}"/>
-                </af:inputText>
-              </af:column>
-              <af:column sortProperty="DepedencyValue" sortable="false"
-                         headerText="#{bindings.XxTnaHVO1.hints.DepedencyValue.label}"
-                         id="c3">
-                <af:inputText value="#{row.bindings.DepedencyValue.inputValue}"
-                              label="#{bindings.XxTnaHVO1.hints.DepedencyValue.label}"
-                              required="#{bindings.XxTnaHVO1.hints.DepedencyValue.mandatory}"
-                              columns="#{bindings.XxTnaHVO1.hints.DepedencyValue.displayWidth}"
-                              maximumLength="#{bindings.XxTnaHVO1.hints.DepedencyValue.precision}"
-                              shortDesc="#{bindings.XxTnaHVO1.hints.DepedencyValue.tooltip}"
-                              id="it6">
-                  <f:validator binding="#{row.bindings.DepedencyValue.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.XxTnaHVO1.hints.DepedencyValue.format}"/>
-                </af:inputText>
-              </af:column>
-              <af:column sortProperty="DayDifference" sortable="false"
-                         headerText="#{bindings.XxTnaHVO1.hints.DayDifference.label}"
-                         id="c1">
-                <af:inputText value="#{row.bindings.DayDifference.inputValue}"
-                              label="#{bindings.XxTnaHVO1.hints.DayDifference.label}"
-                              required="#{bindings.XxTnaHVO1.hints.DayDifference.mandatory}"
-                              columns="#{bindings.XxTnaHVO1.hints.DayDifference.displayWidth}"
-                              maximumLength="#{bindings.XxTnaHVO1.hints.DayDifference.precision}"
-                              shortDesc="#{bindings.XxTnaHVO1.hints.DayDifference.tooltip}"
+            <af:panelGroupLayout layout="scroll"
+                                 xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                 id="pgl1">
+              <af:panelFormLayout id="pfl1">
+                <af:selectOneChoice value="#{bindings.BuyerName.inputValue}"
+                                    label="#{bindings.BuyerName.label}"
+                                    required="#{bindings.BuyerName.hints.mandatory}"
+                                    shortDesc="#{bindings.BuyerName.hints.tooltip}"
+                                    id="soc2">
+                  <f:selectItems value="#{bindings.BuyerName.items}" id="si1"/>
+                </af:selectOneChoice>
+                <af:selectOneChoice value="#{bindings.Season.inputValue}"
+                                    label="#{bindings.Season.label}"
+                                    required="#{bindings.Season.hints.mandatory}"
+                                    shortDesc="#{bindings.Season.hints.tooltip}"
+                                    id="soc1">
+                  <f:selectItems value="#{bindings.Season.items}" id="si2"/>
+                </af:selectOneChoice>
+                <af:inputText value="#{bindings.Style.inputValue}"
+                              label="#{bindings.Style.hints.label}"
+                              required="#{bindings.Style.hints.mandatory}"
+                              columns="#{bindings.Style.hints.displayWidth}"
+                              maximumLength="#{bindings.Style.hints.precision}"
+                              shortDesc="#{bindings.Style.hints.tooltip}"
                               id="it4">
-                  <f:validator binding="#{row.bindings.DayDifference.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.XxTnaHVO1.hints.DayDifference.format}"/>
+                  <f:validator binding="#{bindings.Style.validator}"/>
                 </af:inputText>
-              </af:column>
-              <af:column sortProperty="DepedencyType" sortable="false"
-                         headerText="#{bindings.XxTnaHVO1.hints.DepedencyType.label}"
-                         id="c2">
-                <af:inputText value="#{row.bindings.DepedencyType.inputValue}"
-                              label="#{bindings.XxTnaHVO1.hints.DepedencyType.label}"
-                              required="#{bindings.XxTnaHVO1.hints.DepedencyType.mandatory}"
-                              columns="#{bindings.XxTnaHVO1.hints.DepedencyType.displayWidth}"
-                              maximumLength="#{bindings.XxTnaHVO1.hints.DepedencyType.precision}"
-                              shortDesc="#{bindings.XxTnaHVO1.hints.DepedencyType.tooltip}"
+                <af:inputText value="#{bindings.WashName.inputValue}"
+                              label="#{bindings.WashName.hints.label}"
+                              required="#{bindings.WashName.hints.mandatory}"
+                              columns="#{bindings.WashName.hints.displayWidth}"
+                              maximumLength="#{bindings.WashName.hints.precision}"
+                              shortDesc="#{bindings.WashName.hints.tooltip}"
+                              id="it2">
+                  <f:validator binding="#{bindings.WashName.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.FabricSupplierName.inputValue}"
+                              label="#{bindings.FabricSupplierName.hints.label}"
+                              required="#{bindings.FabricSupplierName.hints.mandatory}"
+                              columns="#{bindings.FabricSupplierName.hints.displayWidth}"
+                              maximumLength="#{bindings.FabricSupplierName.hints.precision}"
+                              shortDesc="#{bindings.FabricSupplierName.hints.tooltip}"
+                              id="it3">
+                  <f:validator binding="#{bindings.FabricSupplierName.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.FabricSupplierCountry.inputValue}"
+                              label="#{bindings.FabricSupplierCountry.hints.label}"
+                              required="#{bindings.FabricSupplierCountry.hints.mandatory}"
+                              columns="#{bindings.FabricSupplierCountry.hints.displayWidth}"
+                              maximumLength="#{bindings.FabricSupplierCountry.hints.precision}"
+                              shortDesc="#{bindings.FabricSupplierCountry.hints.tooltip}"
                               id="it1">
-                  <f:validator binding="#{row.bindings.DepedencyType.validator}"/>
+                  <f:validator binding="#{bindings.FabricSupplierCountry.validator}"/>
                 </af:inputText>
-              </af:column>
-              <af:column sortProperty="FobId" sortable="false"
-                         headerText="#{bindings.XxTnaHVO1.hints.FobId.label}"
-                         id="c8">
-                <af:inputText value="#{row.bindings.FobId.inputValue}"
-                              label="#{bindings.XxTnaHVO1.hints.FobId.label}"
-                              required="#{bindings.XxTnaHVO1.hints.FobId.mandatory}"
-                              columns="#{bindings.XxTnaHVO1.hints.FobId.displayWidth}"
-                              maximumLength="#{bindings.XxTnaHVO1.hints.FobId.precision}"
-                              shortDesc="#{bindings.XxTnaHVO1.hints.FobId.tooltip}"
-                              id="it7">
-                  <f:validator binding="#{row.bindings.FobId.validator}"/>
-                </af:inputText>
-              </af:column>
-            </af:table>
+              </af:panelFormLayout>
+              <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                <f:facet name="menus"/>
+                <f:facet name="toolbar">
+                  <af:toolbar id="t2">
+                    <af:commandButton text="Back" id="cb1"
+                                      action="back to search"/>
+                  </af:toolbar>
+                </f:facet>
+                <f:facet name="statusbar"/>
+                <af:table value="#{bindings.XxTnaHVO1.collectionModel}"
+                          var="row" rows="#{bindings.XxTnaHVO1.rangeSize}"
+                          emptyText="#{bindings.XxTnaHVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.XxTnaHVO1.rangeSize}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.XxTnaHVO1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.XxTnaHVO1.collectionModel.makeCurrent}"
+                          rowSelection="single" id="t1" autoHeightRows="100"
+                          binding="#{ManagedBean.tnaHTable}">
+                  <af:column sortProperty="TnaHId" sortable="false"
+                             headerText="#{bindings.XxTnaHVO1.hints.TnaHId.label}"
+                             id="c4" width="60" visible="false">
+                    <af:inputText value="#{row.bindings.TnaHId.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.TnaHId.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.TnaHId.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.TnaHId.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.TnaHId.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.TnaHId.tooltip}"
+                                  id="it12">
+                      <f:validator binding="#{row.bindings.TnaHId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.XxTnaHVO1.hints.TnaHId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="PocId" sortable="false"
+                             headerText="#{bindings.XxTnaHVO1.hints.PocId.label}"
+                             id="c9" width="60" visible="false">
+                    <af:inputText value="#{row.bindings.PocId.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.PocId.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.PocId.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.PocId.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.PocId.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.PocId.tooltip}"
+                                  id="it6">
+                      <f:validator binding="#{row.bindings.PocId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.XxTnaHVO1.hints.PocId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="SystemId" sortable="false"
+                             headerText="#{bindings.XxTnaHVO1.hints.SystemId.label}"
+                             id="c7" width="60" visible="false">
+                    <af:inputText value="#{row.bindings.SystemId.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.SystemId.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.SystemId.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.SystemId.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.SystemId.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.SystemId.tooltip}"
+                                  id="it9">
+                      <f:validator binding="#{row.bindings.SystemId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.XxTnaHVO1.hints.SystemId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="BuyerId" sortable="false"
+                             headerText="#{bindings.XxTnaHVO1.hints.BuyerId.label}"
+                             id="c8" width="60" visible="false">
+                    <af:inputText value="#{row.bindings.BuyerId.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.BuyerId.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.BuyerId.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.BuyerId.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.BuyerId.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.BuyerId.tooltip}"
+                                  id="it7">
+                      <f:validator binding="#{row.bindings.BuyerId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.XxTnaHVO1.hints.BuyerId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="TnaDateId" sortable="false"
+                             headerText="#{bindings.XxTnaHVO1.hints.TnaDateId.label}"
+                             id="c6" visible="false">
+                    <af:inputText value="#{row.bindings.TnaDateId.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.TnaDateId.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.TnaDateId.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.TnaDateId.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.TnaDateId.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.TnaDateId.tooltip}"
+                                  id="it11">
+                      <f:validator binding="#{row.bindings.TnaDateId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.XxTnaHVO1.hints.TnaDateId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.XxTnaHVO1.hints.TnaDateName.label}"
+                             id="c12" width="200" align="center">
+                    <af:inputText value="#{row.bindings.TnaDateName.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.TnaDateName.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.TnaDateName.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.TnaDateName.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.TnaDateName.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.TnaDateName.tooltip}"
+                                  id="it16">
+                      <f:validator binding="#{row.bindings.TnaDateName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="DTnaDateId" sortable="false"
+                             headerText="#{bindings.XxTnaHVO1.hints.DTnaDateId.label}"
+                             id="c2" visible="false">
+                    <af:inputText value="#{row.bindings.DTnaDateId.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.DTnaDateId.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.DTnaDateId.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.DTnaDateId.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.DTnaDateId.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.DTnaDateId.tooltip}"
+                                  id="it15">
+                      <f:validator binding="#{row.bindings.DTnaDateId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.XxTnaHVO1.hints.DTnaDateId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.XxTnaHVO1.hints.DTnaDateName.label}"
+                             id="c13" width="200" align="center">
+                    <af:inputText value="#{row.bindings.DTnaDateName.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.DTnaDateName.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.DTnaDateName.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.DTnaDateName.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.DTnaDateName.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.DTnaDateName.tooltip}"
+                                  id="it17">
+                      <f:validator binding="#{row.bindings.DTnaDateName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="DayDifference" sortable="false"
+                             headerText="Day Difference"
+                             id="c10" width="60" align="center">
+                    <af:inputText value="#{row.bindings.DayDifference.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.DayDifference.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.DayDifference.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.DayDifference.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.DayDifference.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.DayDifference.tooltip}"
+                                  id="it10">
+                      <f:validator binding="#{row.bindings.DayDifference.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.XxTnaHVO1.hints.DayDifference.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="DependencyType" sortable="false"
+                             headerText="Dependency Type"
+                             id="c5" align="center">
+                    <af:inputText value="#{row.bindings.DependencyType.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.DependencyType.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.DependencyType.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.DependencyType.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.DependencyType.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.DependencyType.tooltip}"
+                                  id="it5" readOnly="true">
+                      <f:validator binding="#{row.bindings.DependencyType.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="DependencyValue" sortable="false"
+                             headerText="Dependency Value"
+                             id="c3" width="60" align="center">
+                    <af:inputText value="#{row.bindings.DependencyValue.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.DependencyValue.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.DependencyValue.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.DependencyValue.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.DependencyValue.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.DependencyValue.tooltip}"
+                                  id="it13" readOnly="true">
+                      <f:validator binding="#{row.bindings.DependencyValue.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.XxTnaHVO1.hints.DependencyValue.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.XxTnaHVO1.hints.TnaDateValue.label}"
+                             id="c14">
+                    <af:inputDate value="#{row.bindings.TnaDateValue.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.TnaDateValue.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.TnaDateValue.mandatory}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.TnaDateValue.tooltip}"
+                                  id="id1"
+                                  valueChangeListener="#{ManagedBean.changeDependantTnaDates}">
+                      <f:validator binding="#{row.bindings.TnaDateValue.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.XxTnaHVO1.hints.TnaDateValue.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="TnaVersionId" sortable="false"
+                             headerText="#{bindings.XxTnaHVO1.hints.TnaVersionId.label}"
+                             id="c1" width="60">
+                    <af:inputText value="#{row.bindings.TnaVersionId.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.TnaVersionId.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.TnaVersionId.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.TnaVersionId.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.TnaVersionId.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.TnaVersionId.tooltip}"
+                                  id="it8" readOnly="true">
+                      <f:validator binding="#{row.bindings.TnaVersionId.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="FabricCountry" sortable="false"
+                             headerText="#{bindings.XxTnaHVO1.hints.FabricCountry.label}"
+                             id="c11" visible="false">
+                    <af:inputText value="#{row.bindings.FabricCountry.inputValue}"
+                                  label="#{bindings.XxTnaHVO1.hints.FabricCountry.label}"
+                                  required="#{bindings.XxTnaHVO1.hints.FabricCountry.mandatory}"
+                                  columns="#{bindings.XxTnaHVO1.hints.FabricCountry.displayWidth}"
+                                  maximumLength="#{bindings.XxTnaHVO1.hints.FabricCountry.precision}"
+                                  shortDesc="#{bindings.XxTnaHVO1.hints.FabricCountry.tooltip}"
+                                  id="it14" readOnly="true">
+                      <f:validator binding="#{row.bindings.FabricCountry.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+              </af:panelCollection>
+            </af:panelGroupLayout>
             <!-- id="af_one_column_stretched"   -->
+          </f:facet>
+         <f:facet name="top">
+            <af:panelHeader text="Default TNA Setup " id="ph2"
+                            styleClass="customLayoutStyle">
+              <f:facet name="context"/>
+              <f:facet name="menuBar"/>
+              <f:facet name="toolbar"/>
+            </af:panelHeader>
           </f:facet>
         </af:panelStretchLayout>
       </af:form>

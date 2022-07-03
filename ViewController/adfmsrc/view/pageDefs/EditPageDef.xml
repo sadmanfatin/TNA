@@ -4,10 +4,39 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
+    <iterator Binds="PocStyleWashFabricVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="PocStyleWashFabricVO1Iterator"/>
     <iterator Binds="XxTnaHVO1" RangeSize="25"
               DataControl="AppModuleDataControl" id="XxTnaHVO1Iterator"/>
   </executables>
   <bindings>
+    <list IterBinding="PocStyleWashFabricVO1Iterator" StaticList="false"
+          Uses="LOV_BuyerName" id="BuyerName" DTSupportsMRU="false"/>
+    <list IterBinding="PocStyleWashFabricVO1Iterator" StaticList="false"
+          Uses="LOV_Season" id="Season" DTSupportsMRU="false"/>
+    <attributeValues IterBinding="PocStyleWashFabricVO1Iterator" id="Style">
+      <AttrNames>
+        <Item Value="Style"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PocStyleWashFabricVO1Iterator" id="WashName">
+      <AttrNames>
+        <Item Value="WashName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PocStyleWashFabricVO1Iterator"
+                     id="FabricSupplierName">
+      <AttrNames>
+        <Item Value="FabricSupplierName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PocStyleWashFabricVO1Iterator"
+                     id="FabricSupplierCountry">
+      <AttrNames>
+        <Item Value="FabricSupplierCountry"/>
+      </AttrNames>
+    </attributeValues>
     <tree IterBinding="XxTnaHVO1Iterator" id="XxTnaHVO1">
       <nodeDefinition DefName="model.view.XxTnaHVO" Name="XxTnaHVO10">
         <AttrNames>
@@ -17,10 +46,14 @@
           <Item Value="BuyerId"/>
           <Item Value="TnaDateId"/>
           <Item Value="DTnaDateId"/>
-          <Item Value="DepedencyValue"/>
           <Item Value="DayDifference"/>
-          <Item Value="DepedencyType"/>
-          <Item Value="FobId"/>
+          <Item Value="DependencyType"/>
+          <Item Value="DependencyValue"/>
+          <Item Value="TnaVersionId"/>
+          <Item Value="FabricCountry"/>
+          <Item Value="TnaDateName"/>
+          <Item Value="DTnaDateName"/>
+          <Item Value="TnaDateValue"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

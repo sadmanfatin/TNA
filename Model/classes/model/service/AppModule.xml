@@ -27,15 +27,21 @@
     Name="XxTnaDefaultBuyerWiseVO1"
     ViewObjectName="model.view.XxTnaDefaultBuyerWiseVO"/>
   <ViewUsage
-    Name="XxTnaHVO1"
-    ViewObjectName="model.view.XxTnaHVO"/>
-  <ViewUsage
     Name="PocStyleWashFabricVO1"
     ViewObjectName="model.view.PocStyleWashFabricVO"/>
+  <ViewUsage
+    Name="XxTnaHVO1"
+    ViewObjectName="model.view.XxTnaHVO"/>
   <ViewLinkUsage
     Name="BuyerVO_vs_XxTnaDefaultBuyerWiseVO_VL1"
     ViewLinkObjectName="model.view.BuyerVO_vs_XxTnaDefaultBuyerWiseVO_VL"
     SrcViewUsageName="model.service.AppModule.BuyerVO1"
     DstViewUsageName="model.service.AppModule.XxTnaDefaultBuyerWiseVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="PocStyleWashFabricVO_vs_XxTnaHVO1"
+    ViewLinkObjectName="model.view.PocStyleWashFabricVO_vs_XxTnaHVO"
+    SrcViewUsageName="model.service.AppModule.PocStyleWashFabricVO1"
+    DstViewUsageName="model.service.AppModule.XxTnaHVO1"
     Reversed="false"/>
 </AppModule>

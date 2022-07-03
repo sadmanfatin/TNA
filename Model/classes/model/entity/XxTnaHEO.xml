@@ -86,17 +86,6 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="DepedencyValue"
-    ColumnName="DEPEDENCY_VALUE"
-    SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
-    ColumnType="NUMBER"
-    TableName="XX_TNA_H">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="39"/>
-    </DesignTime>
-  </Attribute>
-  <Attribute
     Name="DayDifference"
     ColumnName="DAY_DIFFERENCE"
     SQLType="NUMERIC"
@@ -108,9 +97,20 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="DepedencyType"
+    Name="DependencyValue"
+    ColumnName="DEPENDENCY_VALUE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="XX_TNA_H">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DependencyType"
     Precision="200"
-    ColumnName="DEPEDENCY_TYPE"
+    ColumnName="DEPENDENCY_TYPE"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
@@ -120,14 +120,37 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="FobId"
-    ColumnName="FOB_ID"
+    Name="TnaVersionId"
+    ColumnName="TNA_VERSION_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="XX_TNA_H">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FabricCountry"
+    Precision="50"
+    ColumnName="FABRIC_COUNTRY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_TNA_H">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TnaDateValue"
+    ColumnName="TNA_DATE_VALUE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="XX_TNA_H">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
     </DesignTime>
   </Attribute>
   <Key

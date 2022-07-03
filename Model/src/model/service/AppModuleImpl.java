@@ -51,13 +51,6 @@ public class AppModuleImpl extends ApplicationModuleImpl {
         return (XxTnaDefaultBuyerWiseVOImpl)findViewObject("XxTnaDefaultBuyerWiseVO1");
     }
 
-    /**
-     * Container's getter for XxTnaHVO1.
-     * @return XxTnaHVO1
-     */
-    public ViewObjectImpl getXxTnaHVO1() {
-        return (ViewObjectImpl)findViewObject("XxTnaHVO1");
-    }
 
     /**
      * Container's getter for PocStyleWashFabricVO1.
@@ -73,5 +66,21 @@ public class AppModuleImpl extends ApplicationModuleImpl {
      */
     public ViewLinkImpl getBuyerVO_vs_XxTnaDefaultBuyerWiseVO_VL1() {
         return (ViewLinkImpl)findViewLink("BuyerVO_vs_XxTnaDefaultBuyerWiseVO_VL1");
+    }
+
+    /**
+     * Container's getter for XxTnaHVO1.
+     * @return XxTnaHVO1
+     */
+    public ViewObjectImpl getXxTnaHVO1() {
+        return (ViewObjectImpl)findViewObject("XxTnaHVO1");
+    }
+
+    /**
+     * Container's getter for PocStyleWashFabricVO_vs_XxTnaHVO1.
+     * @return PocStyleWashFabricVO_vs_XxTnaHVO1
+     */
+    public ViewLinkImpl getPocStyleWashFabricVO_vs_XxTnaHVO1() {
+        return (ViewLinkImpl)findViewLink("PocStyleWashFabricVO_vs_XxTnaHVO1");
     }
 }

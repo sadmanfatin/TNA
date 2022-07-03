@@ -43,8 +43,48 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">165.29883</property>
+         name="y">218.59766</property>
       <property
-         name="x">474.0</property>
+         name="x">364.0</property>
    </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View6"
+      to="View4">
+      <property
+         name="fromOutcome">go to edit</property>
+      <property
+         name="sdm:polyPoints">B56,367.5,272.24707,519.0,421.44824,L46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="View4"
+      to="View6">
+      <property
+         name="fromOutcome">back to search</property>
+      <property
+         name="sdm:polyPoints">L54,516.1311,428.44824,360.5,275.1585,B44</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="View6"
+      to="View3">
+      <property
+         name="fromOutcome">go to default setup</property>
+      <property
+         name="sdm:polyPoints">R46,405.00415,214.74707,691.0,215.08594,L46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase9"
+      from="View3"
+      to="View6">
+      <property
+         name="fromOutcome">back to search</property>
+      <property
+         name="sdm:polyPoints">L54,690.99585,222.08594,405.0,221.74707,R54</property>
+   </ControlFlowCase>
 </SDM>

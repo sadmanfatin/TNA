@@ -6,24 +6,34 @@
   Name="XxTnaHVO"
   Version="11.1.1.62.29"
   InheritPersonalization="true"
-  SelectList="XxTnaHEO.TNA_H_ID, 
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="model.view.XxTnaHVORowImpl"
+  ComponentClass="model.view.XxTnaHVOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <SQLQuery>
+    <![CDATA[SELECT XxTnaHEO.TNA_H_ID, 
        XxTnaHEO.POC_ID, 
        XxTnaHEO.SYSTEM_ID, 
        XxTnaHEO.BUYER_ID, 
        XxTnaHEO.TNA_DATE_ID, 
+  (select td.TNA_DATE_NAME from XX_TNA_DATES td where td.tna_date_id = XxTnaHEO.tna_date_id ) tna_date_name ,       
        XxTnaHEO.D_TNA_DATE_ID, 
-       XxTnaHEO.DEPEDENCY_VALUE, 
+  (select td.TNA_DATE_NAME from XX_TNA_DATES td where td.tna_date_id = XxTnaHEO.d_tna_date_id ) d_tna_date_name ,     
        XxTnaHEO.DAY_DIFFERENCE, 
-       XxTnaHEO.DEPEDENCY_TYPE, 
-       XxTnaHEO.FOB_ID"
-  FromList="XX_TNA_H XxTnaHEO"
-  BindingStyle="OracleName"
-  CustomQuery="false"
-  PageIterMode="Full"
-  UseGlueCode="false">
-  <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
-  </DesignTime>
+       XxTnaHEO.DEPENDENCY_TYPE, 
+       XxTnaHEO.DEPENDENCY_VALUE, 
+       XxTnaHEO.TNA_VERSION_ID, 
+       XxTnaHEO.FABRIC_COUNTRY, 
+       XxTnaHEO.TNA_DATE_VALUE
+FROM XX_TNA_H XxTnaHEO]]>
+  </SQLQuery>
   <EntityUsage
     Name="XxTnaHEO"
     Entity="model.entity.XxTnaHEO"/>
@@ -59,17 +69,41 @@
     EntityUsage="XxTnaHEO"
     AliasName="TNA_DATE_ID"/>
   <ViewAttribute
+    Name="TnaDateName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="250"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TNA_DATE_NAME"
+    Expression="TNA_DATE_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
     Name="DTnaDateId"
     PrecisionRule="true"
     EntityAttrName="DTnaDateId"
     EntityUsage="XxTnaHEO"
     AliasName="D_TNA_DATE_ID"/>
   <ViewAttribute
-    Name="DepedencyValue"
+    Name="DTnaDateName"
+    IsUpdateable="false"
+    IsPersistent="false"
     PrecisionRule="true"
-    EntityAttrName="DepedencyValue"
-    EntityUsage="XxTnaHEO"
-    AliasName="DEPEDENCY_VALUE"/>
+    Precision="250"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="D_TNA_DATE_NAME"
+    Expression="D_TNA_DATE_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </ViewAttribute>
   <ViewAttribute
     Name="DayDifference"
     PrecisionRule="true"
@@ -77,15 +111,33 @@
     EntityUsage="XxTnaHEO"
     AliasName="DAY_DIFFERENCE"/>
   <ViewAttribute
-    Name="DepedencyType"
+    Name="DependencyType"
     PrecisionRule="true"
-    EntityAttrName="DepedencyType"
+    EntityAttrName="DependencyType"
     EntityUsage="XxTnaHEO"
-    AliasName="DEPEDENCY_TYPE"/>
+    AliasName="DEPENDENCY_TYPE"/>
   <ViewAttribute
-    Name="FobId"
+    Name="DependencyValue"
     PrecisionRule="true"
-    EntityAttrName="FobId"
+    EntityAttrName="DependencyValue"
     EntityUsage="XxTnaHEO"
-    AliasName="FOB_ID"/>
+    AliasName="DEPENDENCY_VALUE"/>
+  <ViewAttribute
+    Name="TnaVersionId"
+    PrecisionRule="true"
+    EntityAttrName="TnaVersionId"
+    EntityUsage="XxTnaHEO"
+    AliasName="TNA_VERSION_ID"/>
+  <ViewAttribute
+    Name="FabricCountry"
+    PrecisionRule="true"
+    EntityAttrName="FabricCountry"
+    EntityUsage="XxTnaHEO"
+    AliasName="FABRIC_COUNTRY"/>
+  <ViewAttribute
+    Name="TnaDateValue"
+    PrecisionRule="true"
+    EntityAttrName="TnaDateValue"
+    EntityUsage="XxTnaHEO"
+    AliasName="TNA_DATE_VALUE"/>
 </ViewObject>

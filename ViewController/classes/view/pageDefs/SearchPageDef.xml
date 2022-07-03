@@ -12,6 +12,8 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="PocStyleWashFabricVO1Iterator"
                   id="PocStyleWashFabricVOCriteriaQuery"/>
+    <iterator Binds="XxTnaHVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="XxTnaHVO1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="PocStyleWashFabricVO1Iterator"
@@ -20,7 +22,6 @@
                       Name="PocStyleWashFabricVO10">
         <AttrNames>
           <Item Value="PocId"/>
-          <Item Value="FobId"/>
           <Item Value="SystemId"/>
           <Item Value="BuyerId"/>
           <Item Value="BuyerName"/>
@@ -29,11 +30,25 @@
           <Item Value="WashName"/>
           <Item Value="RefCode"/>
           <Item Value="ItemCode"/>
-          <Item Value="SupplierId"/>
-          <Item Value="SupplierName"/>
-          <Item Value="CountryCode"/>
-          <Item Value="SupplierCountry"/>
+          <Item Value="FabricSupplierId"/>
+          <Item Value="FabricSupplierName"/>
+          <Item Value="FabricSupplierCountryCode"/>
+          <Item Value="FabricSupplierCountry"/>
           <Item Value="OrderQty"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="XxTnaHVO1Iterator" id="XxTnaHVO1">
+      <nodeDefinition DefName="model.view.XxTnaHVO" Name="XxTnaHVO10">
+        <AttrNames>
+          <Item Value="BuyerId"/>
+          <Item Value="TnaDateId"/>
+          <Item Value="DTnaDateId"/>
+          <Item Value="DayDifference"/>
+          <Item Value="DependencyType"/>
+          <Item Value="DependencyValue"/>
+          <Item Value="TnaVersionId"/>
+          <Item Value="FabricCountry"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
